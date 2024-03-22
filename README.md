@@ -2,7 +2,7 @@
 
 A framework that allows you to build UI's using animation software. This is what we have so far.
 
-![Experience So Far](/resources/experience-so-far.gif)
+![Experience So Far](/resources/experience-so-far-resize.gif)
 
 ## The Goal
 
