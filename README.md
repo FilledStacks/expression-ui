@@ -1,10 +1,12 @@
 # expression ui 
 
-A framework that allows you to build UI's using animation software. This is what we have so far.
+A framework that allows you to build mobile app UI's using animation software. 
 
 ![Experience So Far](/resources/experience-so-far-resize.gif)
 
 ## The Goal
+
+Create a framework that makes UI building for mobile apps fun for EVERY major framework (Flutter, React-Native, iOS Native, Android Native, Kotlin MM).
 
 I am openly building this project as exploration into something that I think would be really fun to have for mobile app developers. 
 
@@ -12,7 +14,11 @@ It's basically a technical research project, below are the MVP "features" I want
 
 ## Technical research
 
-If you're interested in helping. Please reach out on [Twitter](https://twitter.com/danemackier) and I'll add you to our discord.
+If you're interested in helping I would appreciate that.
+
+I'm currently doing the Flutter parts, I would love for react-native, iOS native, Android native and all of those to be developed / researched at the same time. 
+
+Please reach out on [Twitter](https://twitter.com/danemackier) and I'll add you to our Discord if you'd like to help explore this idea.
 
 ### UI Research
 
