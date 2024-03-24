@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:rive/rive.dart';
+import 'package:rive_counter/extensions/rive_extensions.dart';
 import 'package:stacked/stacked.dart';
 
 import 'explainer_viewmodel.dart';
@@ -28,16 +29,14 @@ class ExplainerView extends StackedView<ExplainerViewModel> {
         artboard: 'explainer-view',
         fit: BoxFit.cover,
         onInit: (Artboard artboard) {
-          // final controller = StateMachineController.fromArtboard(
-          //   artboard,
-          //   'CounterStateMachine',
-          // );
+          final titleRun = artboard.textRun('title')!;
+          titleRun.text = title;
 
-          // controller?.addEventListener(viewModel.onRiveEvent);
-          // artboard.addController(controller!);
+          final descriptionRun = artboard.textRun('description')!;
+          descriptionRun.text = description;
 
-          // final counterState = artboard.textRun('Counter')!;
-          // viewModel.setCounterState(counterState);
+          final ctaRun = artboard.textRun('cta')!;
+          ctaRun.text = cta;
         },
       ),
     );
