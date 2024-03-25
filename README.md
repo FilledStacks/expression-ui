@@ -30,7 +30,7 @@ These tasks are all related to the visuals and exploring how we can actually mak
 - [ ] Works with a screen reader
 - [ ] Building a design system and composing
 - [ ] Managing text input
-- [ ] Building responsive UI's
+- [x] Building responsive UI's - [PR](https://github.com/FilledStacks/expression-ui/pull/1)
 - [ ] Performing interactive gestures (Swipes)
 - [ ] Creating dynamic list views
 
