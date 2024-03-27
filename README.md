@@ -1,6 +1,20 @@
 # expression ui 
 
-A framework that allows you to build mobile app UI's using animation software. 
+A framework that allows you to build mobile app UI's without writing code. 
+
+I think that the Figma -> code -> Pixels is the wrong way to go. It's the approach all the no-code tools are taking and most developers I know hate it.
+
+The reason? Developers are very specific about how they do things. 
+
+But what if you could design your UI in a visual editor and it doesn't generate any code. It's just a file that's rendered in your UI.
+
+This means you can use any state management you want, in any framework you want. 
+
+That's the goal of ExpressionUI and what I'm trying to find. 
+
+I'm currently using Rive because it has a runtime that I can use to test the idea, but this can be done using any graphical rendering system. 
+
+Ideally if we could get a runtime that renders figma designs exactly as-is, that would things really interesting. 
 
 ![Experience So Far](/resources/experience-so-far-resize.gif)
 
