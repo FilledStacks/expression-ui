@@ -14,7 +14,7 @@ That's the goal of ExpressionUI and what I'm trying to find.
 
 I'm currently using Rive because it has a runtime that I can use to test the idea, but this can be done using any graphical rendering system. 
 
-Ideally if we could get a runtime that renders figma designs exactly as-is, that would things really interesting. 
+Ideally if we could get a runtime that renders figma designs exactly as-is, that would make things really interesting. 
 
 ![Experience So Far](/resources/experience-so-far-resize.gif)
 
