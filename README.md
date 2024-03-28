@@ -16,6 +16,7 @@ I'm currently using Rive because it has a runtime that I can use to test the ide
 
 Ideally if we could get a runtime that renders figma designs exactly as-is, that would make things really interesting. 
 
+
 ![Experience So Far](/resources/experience-so-far-resize.gif)
 
 ## The Goal
@@ -41,6 +42,7 @@ These tasks are all related to the visuals and exploring how we can actually mak
 - [x] Dynamically update text
 - [x] Sync state with animation UI
 - [x] Building multiple views and navigating between them
+- [ ] Bottom sheets (shoud be the same as normal UI)
 - [ ] Works with a screen reader
 - [ ] Building a design system and composing
 - [ ] Managing text input
@@ -57,6 +59,9 @@ The goal would be to read the rive file and use the data in there to improve the
 - [ ] Automatic binding of click events and callbacks
 - [ ] Type safe referencing of all states, animations, events and artboards 
 
+## Write ups
+
+- [The first development experience](https://x.com/DaneMackier/status/1773348709461344415?s=20)
 
 ## Findings (Kind of Docs)
 
