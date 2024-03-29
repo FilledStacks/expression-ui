@@ -39,16 +39,19 @@ Please reach out on [Twitter](https://twitter.com/danemackier) and I'll add you 
 
 These tasks are all related to the visuals and exploring how we can actually make the user interface work as expected.
 
+- [ ] Creating checkable boxes (up to 5) and update state in code
+- [ ] Creating a long scrollable list view
+- [ ] Managing text input
+- [ ] Performing interactive gestures (Swipes)
+- [ ] Bottom sheets (shoud be the same as normal UI) - _InProgress: Dane_
+
 - [x] Dynamically update text
 - [x] Sync state with animation UI
 - [x] Building multiple views and navigating between them
-- [ ] Bottom sheets (shoud be the same as normal UI)
-- [ ] Works with a screen reader
-- [ ] Building a design system and composing
-- [ ] Managing text input
 - [x] Building responsive UI's - [PR](https://github.com/FilledStacks/expression-ui/pull/1)
-- [ ] Performing interactive gestures (Swipes)
-- [ ] Creating dynamic list views
+- [x] Building a design system and composing
+      
+- [ ] ~Works with a screen reader~ - _Attempted but rive's single widget is making this difficult. Work in `feat/screen-reader`_
 
 ### Development Experience Research
 
