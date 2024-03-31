@@ -1,6 +1,21 @@
 # expression ui 
 
-A framework that allows you to build mobile app UI's using animation software. 
+A framework that allows you to build mobile app UI's without writing code. 
+
+I think that the Figma -> code -> Pixels is the wrong way to go. It's the approach all the no-code tools are taking and most developers I know hate it.
+
+The reason? Developers are very specific about how they do things. 
+
+But what if you could design your UI in a visual editor and it doesn't generate any code. It's just a file that's rendered in your UI.
+
+This means you can use any state management you want, in any framework you want. 
+
+That's the goal of ExpressionUI and what I'm trying to find. 
+
+I'm currently using Rive because it has a runtime that I can use to test the idea, but this can be done using any graphical rendering system. 
+
+Ideally if we could get a runtime that renders figma designs exactly as-is, that would make things really interesting. 
+
 
 ![Experience So Far](/resources/experience-so-far-resize.gif)
 
@@ -24,15 +39,19 @@ Please reach out on [Twitter](https://twitter.com/danemackier) and I'll add you 
 
 These tasks are all related to the visuals and exploring how we can actually make the user interface work as expected.
 
+- [ ] Creating checkable boxes (up to 5) and update state in code
+- [ ] Creating a long scrollable list view
+- [ ] Managing text input
+- [ ] Performing interactive gestures (Swipes)
+- [ ] Bottom sheets (shoud be the same as normal UI) - _InProgress: Dane_
+
 - [x] Dynamically update text
 - [x] Sync state with animation UI
 - [x] Building multiple views and navigating between them
-- [ ] Works with a screen reader
-- [ ] Building a design system and composing
-- [ ] Managing text input
-- [ ] Building responsive UI's
-- [ ] Performing interactive gestures (Swipes)
-- [ ] Creating dynamic list views
+- [x] Building responsive UI's - [PR](https://github.com/FilledStacks/expression-ui/pull/1)
+- [x] Building a design system and composing
+      
+- [ ] ~Works with a screen reader~ - _Attempted but rive's single widget is making this difficult. Work in `feat/screen-reader`_
 
 ### Development Experience Research
 
@@ -43,6 +62,9 @@ The goal would be to read the rive file and use the data in there to improve the
 - [ ] Automatic binding of click events and callbacks
 - [ ] Type safe referencing of all states, animations, events and artboards 
 
+## Write ups
+
+- [The first development experience](https://x.com/DaneMackier/status/1773348709461344415?s=20)
 
 ## Findings (Kind of Docs)
 
