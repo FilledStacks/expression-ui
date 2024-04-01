@@ -1,3 +1,3 @@
-## 0.0.1
+## 0.1.0
 
-* TODO: Describe initial release.
+- feat: Adds `BaseExpressionView` with scrollable functionality and basic event tap listening
