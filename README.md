@@ -1,31 +1,31 @@
 # expression ui 
 
-A framework that allows you to build mobile app UI's without writing code. 
-
-I think that the Figma -> code -> Pixels is the wrong way to go. It's the approach all the no-code tools are taking and most developers I know hate it.
-
-The reason? Developers are very specific about how they do things. 
-
-But what if you could design your UI in a visual editor and it doesn't generate any code. It's just a file that's rendered in your UI.
-
-This means you can use any state management you want, in any framework you want. 
-
-That's the goal of ExpressionUI and what I'm trying to find. 
-
-I'm currently using Rive because it has a runtime that I can use to test the idea, but this can be done using any graphical rendering system. 
-
-Ideally if we could get a runtime that renders figma designs exactly as-is, that would make things really interesting. 
-
-
-![Experience So Far](/resources/experience-so-far-resize.gif)
-
-## The Goal
-
-Create a framework that makes UI building for mobile apps fun for EVERY major framework (Flutter, React-Native, iOS Native, Android Native, Kotlin MM).
+I want to create a framework that makes UI building for mobile apps fun for EVERY major framework (Flutter, React-Native, iOS Native, Android Native, Kotlin MM).
 
 I am openly building this project as exploration into something that I think would be really fun to have for mobile app developers. 
 
-It's basically a technical research project, below are the MVP "features" I want to figure out, before I start building the package.
+![Experience So Far](/resources/experience-so-far-resize.gif)
+
+## What is this about?
+
+Currently the app building process works as follows:
+
+1. Create or get a figma design
+2. Spend hours writing the code to render that Figma design
+  2a. _Every developer does it different_
+3. Run the app and tweak the UI as you are building it
+
+This process is accepted, and when I spoke about it, I was told to ["copy paste my old code" to move faster and I should stop complaining](https://www.reddit.com/r/FlutterDev/comments/1bieuy5/im_tired_of_building_flutter_uis/). 
+
+But I don't like step 2 in the process above.
+
+What if we could go from design directly to pixels. 
+
+That's what I'm exploring with this framework.
+
+The idea is:
+1. Design your UI on a canvas tool
+2. That gets rendered as-is, pixel-perfect using a rendering runtime
 
 ## Technical research
 
@@ -35,16 +35,22 @@ I'm currently doing the Flutter parts, I would love for react-native, iOS native
 
 Please reach out on [Twitter](https://twitter.com/danemackier) and I'll add you to our Discord if you'd like to help explore this idea.
 
+## Repo Setup
+
+- examples: is where the examples will go for each of the frameworks named examples-[framework]
+- packages: is where the packages will go for each of the frameworks names expression-ui-[framework]
+- resources: readme images and gifs
+
 ### UI Research
 
 These tasks are all related to the visuals and exploring how we can actually make the user interface work as expected.
 
 - [ ] Creating checkable boxes (up to 5) and update state in code
-- [ ] Creating a long scrollable list view
 - [ ] Managing text input
 - [ ] Performing interactive gestures (Swipes)
-- [ ] Bottom sheets (shoud be the same as normal UI) - _InProgress: Dane_
 
+- [x] Bottom sheets (shoud be the same as normal UI)
+- [x] Creating a long scrollable list view
 - [x] Dynamically update text
 - [x] Sync state with animation UI
 - [x] Building multiple views and navigating between them
