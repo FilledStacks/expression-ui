@@ -1111,6 +1111,10 @@ PODS:
     - React-jsi (= 0.73.6)
     - React-logger (= 0.73.6)
     - React-perflogger (= 0.73.6)
+  - rive-react-native (6.2.3):
+    - React-Core
+    - RiveRuntime (= 5.5.1)
+  - RiveRuntime (5.5.1)
   - SocketRocket (0.6.1)
   - Yoga (1.14.0)
 
@@ -1187,6 +1191,7 @@ DEPENDENCIES:
   - React-runtimescheduler (from `../node_modules/react-native/ReactCommon/react/renderer/runtimescheduler`)
   - React-utils (from `../node_modules/react-native/ReactCommon/react/utils`)
   - ReactCommon/turbomodule/core (from `../node_modules/react-native/ReactCommon`)
+  - rive-react-native (from `../node_modules/rive-react-native`)
   - Yoga (from `../node_modules/react-native/ReactCommon/yoga`)
 
 SPEC REPOS:
@@ -1203,6 +1208,7 @@ SPEC REPOS:
     - fmt
     - libevent
     - OpenSSL-Universal
+    - RiveRuntime
     - SocketRocket
 
 EXTERNAL SOURCES:
@@ -1301,6 +1307,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native/ReactCommon/react/utils"
   ReactCommon:
     :path: "../node_modules/react-native/ReactCommon"
+  rive-react-native:
+    :path: "../node_modules/rive-react-native"
   Yoga:
     :path: "../node_modules/react-native/ReactCommon/yoga"
 
@@ -1364,9 +1372,11 @@ SPEC CHECKSUMS:
   React-runtimescheduler: 9636eee762c699ca7c85751a359101797e4c8b3b
   React-utils: d16c1d2251c088ad817996621947d0ac8167b46c
   ReactCommon: 2aa35648354bd4c4665b9a5084a7d37097b89c10
+  rive-react-native: 79777686cb29eaba6a28a0534fe82c8b8da41b4a
+  RiveRuntime: b57830ff73f406f3b4022f457b16690535ca4d05
   SocketRocket: f32cd54efbe0f095c4d7594881e52619cfe80b17
   Yoga: d17d2cc8105eed528474683b42e2ea310e1daf61
 
-PODFILE CHECKSUM: a377c0a9d76e595d1f278fc500fb5e6dbe5f4829
+PODFILE CHECKSUM: a677abd1c7defb54e3899f26bb391a6d30868aac
 
-COCOAPODS: 1.14.3
+COCOAPODS: 1.13.0
