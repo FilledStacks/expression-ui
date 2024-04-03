@@ -13,6 +13,9 @@ dependencies:
   responsive_builder: ^0.7.0
   rive: ^0.13.1
   stacked: ^3.4.2
+  expression_ui:
+    path: "../../packages/expression-ui-flutter"
+
 
 dev_dependencies:
   flutter_lints: ^3.0.0

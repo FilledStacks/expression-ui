@@ -1,8 +1,9 @@
+import 'package:expression_ui/src/extensions/rive_extensions.dart';
 import 'package:expression_ui/src/models/tap_event.dart';
 import 'package:flutter/material.dart';
 import 'package:rive/rive.dart';
 
-class BaseExpressionView extends StatelessWidget {
+class BaseExpressionView extends StatefulWidget {
   /// Assets path to the .riv file
   final String filePath;
 
@@ -32,16 +33,23 @@ class BaseExpressionView extends StatelessWidget {
   });
 
   @override
+  State<BaseExpressionView> createState() => BaseExpressionViewState();
+}
+
+class BaseExpressionViewState extends State<BaseExpressionView> {
+  late final Artboard _artboard;
+
+  @override
   Widget build(BuildContext context) {
     final riveView = RiveAnimation.asset(
-      filePath,
-      artboard: artboardName,
-      useArtboardSize: scrollable,
+      widget.filePath,
+      artboard: widget.artboardName,
+      useArtboardSize: widget.scrollable,
       fit: BoxFit.cover,
       onInit: onRiveFileInitialized,
     );
 
-    if (!scrollable) {
+    if (!widget.scrollable) {
       return riveView;
     }
 
@@ -56,17 +64,22 @@ class BaseExpressionView extends StatelessWidget {
   }
 
   void onRiveFileInitialized(Artboard artboard) {
+    _artboard = artboard;
     final controller = StateMachineController.fromArtboard(
       artboard,
-      stateMachine ?? 'State Machine 1',
+      widget.stateMachine ?? 'State Machine 1',
     );
 
     if (controller != null) {
       controller.addEventListener((event) {
-        onTap.call(TapEvent(eventName: event.name));
+        widget.onTap.call(TapEvent(eventName: event.name));
       });
 
       artboard.addController(controller);
     }
+  }
+
+  void editTextValueRun(String key, String value) {
+    _artboard.textRun(key)!.text = value;
   }
 }
