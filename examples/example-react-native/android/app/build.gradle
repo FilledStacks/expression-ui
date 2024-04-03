@@ -106,6 +106,7 @@ android {
 
 dependencies {
     // The version of react-native is set by the React Native Gradle Plugin
+    implementation platform('org.jetbrains.kotlin:kotlin-bom:1.8.0')
     implementation("com.facebook.react:react-android")
     implementation("com.facebook.react:flipper-integration")
 
