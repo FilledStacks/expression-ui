@@ -1,12 +1,10 @@
 This is an example [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
 
-<video width="410" height="620" controls>
-  <source src="../../resources/react-native-first-look.mov" type="video/mp4">
-</video>
+![React Native First Look](../../resources/react-native-first-look.gif)
 
 # UI Research Tasks
 
-Below are the tasks, completed in this example from [UI Research Checklist](../../README.md#ui-research)
+Below are the tasks, completed in this example from [UI Research Checklist](../../README.md?tab=readme-ov-file#ui-research)
 
 - [x] Dynamically update text
 - [x] Sync state with animation UI
