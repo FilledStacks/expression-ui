@@ -1,4 +1,16 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+This is an example [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+
+<video width="410" height="620" controls>
+  <source src="../../resources/react-native-first-look.mov" type="video/mp4">
+</video>
+
+# UI Research Tasks
+
+Below are the tasks, completed in this example from [UI Research Checklist](../../README.md#ui-research)
+
+- [x] Dynamically update text
+- [x] Sync state with animation UI
+- [x] Building multiple views and navigating between them
 
 # Getting Started
 
@@ -50,7 +62,7 @@ This is one way to run your app — you can also run it directly from within And
 
 Now that you have successfully run the app, let's modify it.
 
-1. Open `App.tsx` in your text editor of choice and edit some lines.
+1. Open `src/App.tsx` in your text editor of choice and edit some lines.
 2. For **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Developer Menu** (<kbd>Ctrl</kbd> + <kbd>M</kbd> (on Window and Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (on macOS)) to see your changes!
 
    For **iOS**: Hit <kbd>Cmd ⌘</kbd> + <kbd>R</kbd> in your iOS Simulator to reload the app and see your changes!
