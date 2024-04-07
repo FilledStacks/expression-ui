@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:rive/rive.dart';
-import 'package:rive_counter/edit_text_run/edit_text_run_view.dart';
+import 'package:rive_counter/tiles/list_tiles_view.dart';
 import 'package:stacked/stacked.dart';
 
 import 'intro_viewmodel.dart';
@@ -28,7 +28,7 @@ class IntroView extends StackedView<IntroViewModel> {
 
           controller?.addEventListener((_) {
             WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
-              Navigator.of(context).push(CupertinoPageRoute(builder: (_) => EditTextRunView()));
+              Navigator.of(context).push(CupertinoPageRoute(builder: (_) => ListTilesView()));
             });
           });
           artboard.addController(controller!);
