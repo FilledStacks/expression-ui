@@ -42,7 +42,7 @@ class _ExpressionTileState extends State<ExpressionTile> {
     var objectMap = widget.objetToDraw.toJsonTile();
     var keys = objectMap.keys;
     for (var key in keys) {
-      _artboard.textRun(key)!.text = objectMap[key];
+      _artboard.textRun(key)?.text = objectMap[key];
     }
   }
 
