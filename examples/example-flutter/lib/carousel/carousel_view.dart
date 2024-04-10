@@ -25,7 +25,8 @@ class CarouselView extends StackedView<CarouselViewModel> {
               artboard: 'Carousel',
               fit: BoxFit.none,
               onInit: (artboard) {
-                artboard.textRun('Placeholder')?.text = 'Index: $index';
+                final textValueRun = artboard.textRun('Placeholder')!;
+                viewModel.setPageViewIndex(textValueRun, index);
               },
             );
           },
