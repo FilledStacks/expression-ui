@@ -1,4 +1,6 @@
-import 'package:expression_ui/src/models/tap_event.dart';
+import 'package:expression_ui/src/extensions/rive_extensions.dart';
+import 'package:expression_ui/src/models/state_event.dart';
+import 'package:expression_ui/src/utils/state_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:rive/rive.dart';
 
@@ -12,7 +14,7 @@ class BaseExpressionView extends StatelessWidget {
   /// Fired when an event pointer down happens in the rive file
   ///
   /// Events has the be triggered in the rive file
-  final Function(TapEvent) onTap;
+  final Function(StateEvent) onEvent;
 
   /// Set to true if the entire view needs to be scrollable
   ///
@@ -22,13 +24,21 @@ class BaseExpressionView extends StatelessWidget {
   /// The name of the state machine to load
   final String? stateMachine;
 
+  /// The map of dynamic text updates to perform
+  final Map<String, String> textValues;
+
+  /// Controller to manage the state of [artboardName]
+  final StateController? controller;
+
   const BaseExpressionView({
     super.key,
     required this.filePath,
     required this.artboardName,
-    required this.onTap,
+    required this.onEvent,
     this.scrollable = false,
     this.stateMachine,
+    this.textValues = const {},
+    this.controller,
   });
 
   @override
@@ -56,17 +66,27 @@ class BaseExpressionView extends StatelessWidget {
   }
 
   void onRiveFileInitialized(Artboard artboard) {
-    final controller = StateMachineController.fromArtboard(
+    final stateMachineController = StateMachineController.fromArtboard(
       artboard,
       stateMachine ?? 'State Machine 1',
     );
 
-    if (controller != null) {
-      controller.addEventListener((event) {
-        onTap.call(TapEvent(eventName: event.name));
+    for (var entry in textValues.keys) {
+      final textRun = artboard.textRun(entry);
+
+      if (textRun != null) {
+        textRun.text = textValues[entry]!;
+      }
+    }
+
+    if (stateMachineController != null) {
+      stateMachineController.addEventListener((event) {
+        onEvent.call(StateEvent(name: event.name));
       });
 
-      artboard.addController(controller);
+      controller?.setInputs(stateMachineController.inputs);
+
+      artboard.addController(stateMachineController);
     }
   }
 }

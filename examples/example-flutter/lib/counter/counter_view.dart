@@ -29,6 +29,7 @@ class CounterView extends StackedView<CounterViewModel> {
           artboard.addController(controller!);
 
           final counterState = artboard.textRun('Counter')!;
+
           viewModel.setCounterState(counterState);
         },
       ),
