@@ -1,27 +1,31 @@
-name: rive_counter
-description: "A new Flutter project."
-publish_to: "none"
+name: expression_ui_example
+description: A new Flutter project.
+publish_to: 'none'
 version: 0.1.0
 
 environment:
   sdk: ">=3.3.1 <4.0.0"
 
 dependencies:
-  device_preview: ^1.1.0
   flutter:
     sdk: flutter
   responsive_builder: ^0.7.0
-  rive: ^0.13.1
-  stacked: ^3.4.2
+  stacked: ^3.4.0
+  stacked_services: ^1.1.0
+
+  expression_ui:
+    path: ../../packages/expression-ui-flutter
 
 dev_dependencies:
-  flutter_lints: ^3.0.0
+  build_runner: ^2.4.5
   flutter_test:
     sdk: flutter
+  flutter_lints: ^2.0.0
+  mockito: ^5.4.1
+  stacked_generator: ^1.3.3
 
 flutter:
   uses-material-design: true
 
   assets:
-    - assets/counter.riv
-    - assets/responsive.riv
+    - assets/expressionui.riv

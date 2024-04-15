@@ -1,6 +1,6 @@
 {
-    "name": "rive_counter",
-    "short_name": "rive_counter",
+    "name": "expression_ui_example",
+    "short_name": "expression_ui_example",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
