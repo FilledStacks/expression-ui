@@ -138,3 +138,13 @@ Each artboard can be a single view/screen and can be referenced per view file si
 We navigate between them normally, by listening to the button tap events and doing navigation however we choose. This gives us the full capabilities of the framework we're using in terms of native style navigation and we don't have to manually build all transitions. 
 
 It also gives us the ability to use the hero effect.
+
+### React Native Example & Findings
+
+- [RN Implementation with Rive Runtime](/examples/example-react-native/)
+
+There isn't any API or method in React Native framework to retrieve the text run value from the Rive Runtime. Same goes for retrieving the input state value because of some limitations on the React Native Framework and how Rive Runtime works with RN.
+
+There are high level APIs for other frameworks that are useful for getting the current text run value, e.g. `getTextRunValue(textRunName: string)` in React, but only React Native doesn't have this yet.
+
+If you want Rive to report at Runtime a very specific string or text from the animation (that is defined at design time), you can use Rive Events to "report" a payload with that string at runtime.

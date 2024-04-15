@@ -1,6 +1,6 @@
 name: expression_ui
 description: "A UI framework that allows you to build UI on a canvas and render as-is in your app"
-version: 0.1.0
+version: 0.2.0
 homepage:
 
 environment:

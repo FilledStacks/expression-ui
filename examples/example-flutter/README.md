@@ -1,3 +1,3 @@
-# rive_counter
+# expression_ui_example
 
 A new Flutter project.

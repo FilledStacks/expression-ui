@@ -90,12 +90,12 @@ BEGIN
         BLOCK "040904e4"
         BEGIN
             VALUE "CompanyName", "com.example" "\0"
-            VALUE "FileDescription", "rive_counter" "\0"
+            VALUE "FileDescription", "expression_ui_example" "\0"
             VALUE "FileVersion", VERSION_AS_STRING "\0"
-            VALUE "InternalName", "rive_counter" "\0"
+            VALUE "InternalName", "expression_ui_example" "\0"
             VALUE "LegalCopyright", "Copyright (C) 2024 com.example. All rights reserved." "\0"
-            VALUE "OriginalFilename", "rive_counter.exe" "\0"
-            VALUE "ProductName", "rive_counter" "\0"
+            VALUE "OriginalFilename", "expression_ui_example.exe" "\0"
+            VALUE "ProductName", "expression_ui_example" "\0"
             VALUE "ProductVersion", VERSION_AS_STRING "\0"
         END
     END
