@@ -1,5 +1,5 @@
 //
-//  IntroVM.swift
+//  StartUpVM.swift
 //  example-swiftui
 //
 //  Created by Ifeanyi Onuoha on 09/04/2024.
@@ -10,16 +10,20 @@ import RiveRuntime
 
 
 @Observable
-class IntroVM: RiveViewModel {
+class StartUpVM: RiveViewModel {
     init() {
-        super.init(fileName: "counter", fit: .cover, artboardName: "intro-screen")
+        super.init(
+            fileName: Constants.riveAsset,
+            fit: .cover,
+            artboardName: Constants.introView
+        )
     }
     
     // Subscribe to Rive events and this delegate will be invoked
     @objc func onRiveEventReceived(onRiveEvent riveEvent: RiveEvent) {
         switch riveEvent.name() {
         case "begin_experience":
-            Router.shared.push(.counter)
+            Router.shared.push(.crossFramework)
         default:
             print("NOT IMPLEMENTED: \(riveEvent.name())")
         }

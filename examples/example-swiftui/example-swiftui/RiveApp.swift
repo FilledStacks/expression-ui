@@ -11,10 +11,13 @@ import SwiftUI
 struct RiveApp: App {
     var body: some Scene {
         WindowGroup {
-            IntroView()
+            StartUpView()
                 .environment(Router.shared)
-                .environment(IntroVM())
-                .environment(CounterVM())
+                .environment(StartUpVM())
+                .environment(CrossFrameworkVM())
+                .environment(DevFriendlyVM())
+                .environment(PixelPerfectVM())
+                .environment(ComposableVM())
         }
     }
 }
