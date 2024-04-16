@@ -1,6 +1,6 @@
 # expression ui 
 
-A alternative way to build mobile app UI EVERY major framework (Flutter, React-Native, SwiftUI, iOS Native, and Kotlin).
+A alternative way to build mobile app UI on EVERY major framework (Flutter, React-Native, SwiftUI, iOS Native, and Kotlin).
 
 ## [Get tutorials and updates in your inbox](https://appsplusplus.carrd.co/)
 
