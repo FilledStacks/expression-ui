@@ -1,0 +1,23 @@
+{
+  "pins" : [
+    {
+      "identity" : "expression-ui-swift",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/o-ifeanyi/expression-ui-swift",
+      "state" : {
+        "branch" : "main",
+        "revision" : "249937934bb7f318a314121e692d30557ee4c4ae"
+      }
+    },
+    {
+      "identity" : "rive-ios",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/rive-app/rive-ios.git",
+      "state" : {
+        "revision" : "30e738b8842f236bb0e6b5117eab5dd9b26c88d7",
+        "version" : "5.10.0"
+      }
+    }
+  ],
+  "version" : 2
+}
