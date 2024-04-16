@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:rive/rive.dart';
 
-class BaseExpressionView extends StatefulWidget {
+class BaseExpressionView extends StatelessWidget {
   /// Assets path to the .riv file
   final String filePath;
 
