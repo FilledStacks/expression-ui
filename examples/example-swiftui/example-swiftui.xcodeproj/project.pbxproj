@@ -7,27 +7,43 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1E40C4692BC59E9E00E1E56E /* CounterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E40C4682BC59E9E00E1E56E /* CounterView.swift */; };
-		1E40C46B2BC5A14D00E1E56E /* IntroVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E40C46A2BC5A14D00E1E56E /* IntroVM.swift */; };
-		1E40C46F2BC5A22000E1E56E /* CounterVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E40C46E2BC5A22000E1E56E /* CounterVM.swift */; };
+		1E3276252BCDE74500ABD62B /* expressionui.riv in Resources */ = {isa = PBXBuildFile; fileRef = 1E3276242BCDE74500ABD62B /* expressionui.riv */; };
+		1E3276312BCDE9A200ABD62B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E3276302BCDE9A200ABD62B /* Constants.swift */; };
+		1E3276332BCDEB4A00ABD62B /* PixelPerfectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E3276322BCDEB4A00ABD62B /* PixelPerfectView.swift */; };
+		1E3276352BCDEB7600ABD62B /* PixelPerfectVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E3276342BCDEB7600ABD62B /* PixelPerfectVM.swift */; };
+		1E3276372BCDEBD800ABD62B /* DevFriendlyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E3276362BCDEBD800ABD62B /* DevFriendlyView.swift */; };
+		1E3276392BCDEBE800ABD62B /* DevFriendlyVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E3276382BCDEBE800ABD62B /* DevFriendlyVM.swift */; };
+		1E32763B2BCDEC2400ABD62B /* CrossFrameworkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E32763A2BCDEC2400ABD62B /* CrossFrameworkView.swift */; };
+		1E32763D2BCDEC5400ABD62B /* CrossFrameworkVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E32763C2BCDEC5400ABD62B /* CrossFrameworkVM.swift */; };
+		1E32763F2BCDEC8900ABD62B /* ComposableVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E32763E2BCDEC8900ABD62B /* ComposableVM.swift */; };
+		1E3276412BCDECA600ABD62B /* ComposableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E3276402BCDECA600ABD62B /* ComposableView.swift */; };
+		1E3276432BCDED5800ABD62B /* Routes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E3276422BCDED5800ABD62B /* Routes.swift */; };
+		1E40C46B2BC5A14D00E1E56E /* StartUpVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E40C46A2BC5A14D00E1E56E /* StartUpVM.swift */; };
 		1E40C4712BC5A30A00E1E56E /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E40C4702BC5A30A00E1E56E /* Router.swift */; };
-		1E40C4742BC5B15600E1E56E /* counter.riv in Resources */ = {isa = PBXBuildFile; fileRef = 1E40C4732BC5B15600E1E56E /* counter.riv */; };
 		1E551E4D2BC58E5600089E42 /* RiveApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E551E4C2BC58E5600089E42 /* RiveApp.swift */; };
-		1E551E4F2BC58E5600089E42 /* IntroView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E551E4E2BC58E5600089E42 /* IntroView.swift */; };
+		1E551E4F2BC58E5600089E42 /* StartUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E551E4E2BC58E5600089E42 /* StartUpView.swift */; };
 		1E551E512BC58E5700089E42 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1E551E502BC58E5700089E42 /* Assets.xcassets */; };
 		1E551E542BC58E5700089E42 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1E551E532BC58E5700089E42 /* Preview Assets.xcassets */; };
 		1E551E5C2BC5900B00089E42 /* RiveRuntime in Frameworks */ = {isa = PBXBuildFile; productRef = 1E551E5B2BC5900B00089E42 /* RiveRuntime */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		1E40C4682BC59E9E00E1E56E /* CounterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterView.swift; sourceTree = "<group>"; };
-		1E40C46A2BC5A14D00E1E56E /* IntroVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroVM.swift; sourceTree = "<group>"; };
-		1E40C46E2BC5A22000E1E56E /* CounterVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterVM.swift; sourceTree = "<group>"; };
+		1E3276242BCDE74500ABD62B /* expressionui.riv */ = {isa = PBXFileReference; lastKnownFileType = file; path = expressionui.riv; sourceTree = "<group>"; };
+		1E3276302BCDE9A200ABD62B /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		1E3276322BCDEB4A00ABD62B /* PixelPerfectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PixelPerfectView.swift; sourceTree = "<group>"; };
+		1E3276342BCDEB7600ABD62B /* PixelPerfectVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PixelPerfectVM.swift; sourceTree = "<group>"; };
+		1E3276362BCDEBD800ABD62B /* DevFriendlyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevFriendlyView.swift; sourceTree = "<group>"; };
+		1E3276382BCDEBE800ABD62B /* DevFriendlyVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevFriendlyVM.swift; sourceTree = "<group>"; };
+		1E32763A2BCDEC2400ABD62B /* CrossFrameworkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrossFrameworkView.swift; sourceTree = "<group>"; };
+		1E32763C2BCDEC5400ABD62B /* CrossFrameworkVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrossFrameworkVM.swift; sourceTree = "<group>"; };
+		1E32763E2BCDEC8900ABD62B /* ComposableVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComposableVM.swift; sourceTree = "<group>"; };
+		1E3276402BCDECA600ABD62B /* ComposableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComposableView.swift; sourceTree = "<group>"; };
+		1E3276422BCDED5800ABD62B /* Routes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Routes.swift; sourceTree = "<group>"; };
+		1E40C46A2BC5A14D00E1E56E /* StartUpVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartUpVM.swift; sourceTree = "<group>"; };
 		1E40C4702BC5A30A00E1E56E /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
-		1E40C4732BC5B15600E1E56E /* counter.riv */ = {isa = PBXFileReference; lastKnownFileType = file; path = counter.riv; sourceTree = "<group>"; };
 		1E551E492BC58E5600089E42 /* example-swiftui.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "example-swiftui.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1E551E4C2BC58E5600089E42 /* RiveApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RiveApp.swift; sourceTree = "<group>"; };
-		1E551E4E2BC58E5600089E42 /* IntroView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroView.swift; sourceTree = "<group>"; };
+		1E551E4E2BC58E5600089E42 /* StartUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartUpView.swift; sourceTree = "<group>"; };
 		1E551E502BC58E5700089E42 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1E551E532BC58E5700089E42 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -44,22 +60,95 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1E40C46C2BC5A20000E1E56E /* Intro */ = {
+		1E3276262BCDE75700ABD62B /* App */ = {
 			isa = PBXGroup;
 			children = (
-				1E551E4E2BC58E5600089E42 /* IntroView.swift */,
-				1E40C46A2BC5A14D00E1E56E /* IntroVM.swift */,
+				1E3276292BCDE7C000ABD62B /* Views */,
 			);
-			path = Intro;
+			path = App;
 			sourceTree = "<group>";
 		};
-		1E40C46D2BC5A20700E1E56E /* Counter */ = {
+		1E3276272BCDE76500ABD62B /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				1E40C4682BC59E9E00E1E56E /* CounterView.swift */,
-				1E40C46E2BC5A22000E1E56E /* CounterVM.swift */,
+				1E32762F2BCDE99500ABD62B /* Util */,
+				1E3276282BCDE77100ABD62B /* Router */,
 			);
-			path = Counter;
+			path = Core;
+			sourceTree = "<group>";
+		};
+		1E3276282BCDE77100ABD62B /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				1E40C4702BC5A30A00E1E56E /* Router.swift */,
+				1E3276422BCDED5800ABD62B /* Routes.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		1E3276292BCDE7C000ABD62B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				1E32762E2BCDE98700ABD62B /* Composable */,
+				1E32762D2BCDE82500ABD62B /* CrossFramework */,
+				1E32762C2BCDE81600ABD62B /* DevFriendly */,
+				1E32762B2BCDE80700ABD62B /* PixePerfect */,
+				1E32762A2BCDE7F900ABD62B /* StartUp */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		1E32762A2BCDE7F900ABD62B /* StartUp */ = {
+			isa = PBXGroup;
+			children = (
+				1E551E4E2BC58E5600089E42 /* StartUpView.swift */,
+				1E40C46A2BC5A14D00E1E56E /* StartUpVM.swift */,
+			);
+			path = StartUp;
+			sourceTree = "<group>";
+		};
+		1E32762B2BCDE80700ABD62B /* PixePerfect */ = {
+			isa = PBXGroup;
+			children = (
+				1E3276322BCDEB4A00ABD62B /* PixelPerfectView.swift */,
+				1E3276342BCDEB7600ABD62B /* PixelPerfectVM.swift */,
+			);
+			path = PixePerfect;
+			sourceTree = "<group>";
+		};
+		1E32762C2BCDE81600ABD62B /* DevFriendly */ = {
+			isa = PBXGroup;
+			children = (
+				1E3276362BCDEBD800ABD62B /* DevFriendlyView.swift */,
+				1E3276382BCDEBE800ABD62B /* DevFriendlyVM.swift */,
+			);
+			path = DevFriendly;
+			sourceTree = "<group>";
+		};
+		1E32762D2BCDE82500ABD62B /* CrossFramework */ = {
+			isa = PBXGroup;
+			children = (
+				1E32763A2BCDEC2400ABD62B /* CrossFrameworkView.swift */,
+				1E32763C2BCDEC5400ABD62B /* CrossFrameworkVM.swift */,
+			);
+			path = CrossFramework;
+			sourceTree = "<group>";
+		};
+		1E32762E2BCDE98700ABD62B /* Composable */ = {
+			isa = PBXGroup;
+			children = (
+				1E32763E2BCDEC8900ABD62B /* ComposableVM.swift */,
+				1E3276402BCDECA600ABD62B /* ComposableView.swift */,
+			);
+			path = Composable;
+			sourceTree = "<group>";
+		};
+		1E32762F2BCDE99500ABD62B /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				1E3276302BCDE9A200ABD62B /* Constants.swift */,
+			);
+			path = Util;
 			sourceTree = "<group>";
 		};
 		1E551E402BC58E5600089E42 = {
@@ -81,11 +170,10 @@
 		1E551E4B2BC58E5600089E42 /* example-swiftui */ = {
 			isa = PBXGroup;
 			children = (
-				1E40C46D2BC5A20700E1E56E /* Counter */,
-				1E40C46C2BC5A20000E1E56E /* Intro */,
+				1E3276272BCDE76500ABD62B /* Core */,
+				1E3276262BCDE75700ABD62B /* App */,
 				1E551E5D2BC592CD00089E42 /* RiveAssets */,
 				1E551E4C2BC58E5600089E42 /* RiveApp.swift */,
-				1E40C4702BC5A30A00E1E56E /* Router.swift */,
 				1E551E502BC58E5700089E42 /* Assets.xcassets */,
 				1E551E522BC58E5700089E42 /* Preview Content */,
 			);
@@ -103,7 +191,7 @@
 		1E551E5D2BC592CD00089E42 /* RiveAssets */ = {
 			isa = PBXGroup;
 			children = (
-				1E40C4732BC5B15600E1E56E /* counter.riv */,
+				1E3276242BCDE74500ABD62B /* expressionui.riv */,
 			);
 			path = RiveAssets;
 			sourceTree = "<group>";
@@ -172,7 +260,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1E40C4742BC5B15600E1E56E /* counter.riv in Resources */,
+				1E3276252BCDE74500ABD62B /* expressionui.riv in Resources */,
 				1E551E542BC58E5700089E42 /* Preview Assets.xcassets in Resources */,
 				1E551E512BC58E5700089E42 /* Assets.xcassets in Resources */,
 			);
@@ -185,12 +273,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1E40C46F2BC5A22000E1E56E /* CounterVM.swift in Sources */,
-				1E551E4F2BC58E5600089E42 /* IntroView.swift in Sources */,
+				1E551E4F2BC58E5600089E42 /* StartUpView.swift in Sources */,
+				1E3276432BCDED5800ABD62B /* Routes.swift in Sources */,
 				1E551E4D2BC58E5600089E42 /* RiveApp.swift in Sources */,
-				1E40C46B2BC5A14D00E1E56E /* IntroVM.swift in Sources */,
+				1E40C46B2BC5A14D00E1E56E /* StartUpVM.swift in Sources */,
+				1E3276412BCDECA600ABD62B /* ComposableView.swift in Sources */,
+				1E32763D2BCDEC5400ABD62B /* CrossFrameworkVM.swift in Sources */,
+				1E3276332BCDEB4A00ABD62B /* PixelPerfectView.swift in Sources */,
+				1E32763B2BCDEC2400ABD62B /* CrossFrameworkView.swift in Sources */,
+				1E3276312BCDE9A200ABD62B /* Constants.swift in Sources */,
+				1E3276352BCDEB7600ABD62B /* PixelPerfectVM.swift in Sources */,
 				1E40C4712BC5A30A00E1E56E /* Router.swift in Sources */,
-				1E40C4692BC59E9E00E1E56E /* CounterView.swift in Sources */,
+				1E32763F2BCDEC8900ABD62B /* ComposableVM.swift in Sources */,
+				1E3276372BCDEBD800ABD62B /* DevFriendlyView.swift in Sources */,
+				1E3276392BCDEBE800ABD62B /* DevFriendlyVM.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

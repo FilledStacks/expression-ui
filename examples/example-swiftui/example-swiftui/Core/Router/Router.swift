@@ -7,17 +7,12 @@
 
 import Foundation
 
-enum Screen {
-    case intro
-    case counter
-}
-
 @Observable
 final class Router {
     static let shared = Router()
-    var routes = [Screen]()
+    var routes: [Route] = []
     
-    func push(_ screen: Screen) {
-        routes.append(screen)
+    func push(_ route: Route) {
+        routes.append(route)
     }
 }

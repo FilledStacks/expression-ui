@@ -1,5 +1,5 @@
 //
-//  IntroView.swift
+//  StartUpView.swift
 //  example-swiftui
 //
 //  Created by Ifeanyi Onuoha on 09/04/2024.
@@ -7,9 +7,9 @@
 
 import SwiftUI
 
-struct IntroView: View {
+struct StartUpView: View {
     @Environment(Router.self) private var router
-    @Environment(IntroVM.self) private var viewModel
+    @Environment(StartUpVM.self) private var viewModel
     
     var body: some View {
         @Bindable var router = router
@@ -24,14 +24,7 @@ struct IntroView: View {
                 }
             }
             .ignoresSafeArea()
-            .navigationDestination(for: Screen.self, destination: {screen in
-                switch screen {
-                case .intro:
-                    IntroView()
-                case .counter:
-                    CounterView()
-                }
-            })
+            .navigationDestination(for: Route.self, destination: { $0 })
         }
     }
 }

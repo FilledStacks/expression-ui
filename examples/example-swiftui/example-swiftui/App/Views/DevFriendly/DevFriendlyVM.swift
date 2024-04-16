@@ -1,8 +1,8 @@
 //
-//  CounterVM.swift
+//  DevFriendlyVM.swift
 //  example-swiftui
 //
-//  Created by Ifeanyi Onuoha on 09/04/2024.
+//  Created by Ifeanyi Onuoha on 16/04/2024.
 //
 
 import Foundation
@@ -10,21 +10,22 @@ import RiveRuntime
 
 
 @Observable
-class CounterVM: RiveViewModel {
+class DevFriendlyVM: RiveViewModel {
     init() {
-        super.init(fileName: "counter", fit: .cover)
+        super.init(
+            fileName: Constants.riveAsset,
+            fit: .cover,
+            artboardName: Constants.developerFriendlyView
+        )
     }
-
+    
     // Subscribe to Rive events and this delegate will be invoked
     @objc func onRiveEventReceived(onRiveEvent riveEvent: RiveEvent) {
         switch riveEvent.name() {
-        case "button_clicked":
-            let state = getTextRunValue("Counter") ?? "0"
-            let count = 1 + (Int(state) ?? 0)
-            try? setTextRunValue("Counter", textValue: "\(count)")
+        case "next_tapped":
+            Router.shared.push(.pixelPerfect)
         default:
             print("NOT IMPLEMENTED: \(riveEvent.name())")
         }
-
     }
 }
