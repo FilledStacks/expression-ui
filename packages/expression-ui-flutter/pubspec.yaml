@@ -1,7 +1,7 @@
 name: expression_ui
 description: "A UI framework that allows you to build UI on a canvas and render as-is in your app"
 version: 0.2.0
-homepage:
+homepage: https://github.com/FilledStacks/expression-ui
 
 environment:
   sdk: '>=3.3.3 <4.0.0'
