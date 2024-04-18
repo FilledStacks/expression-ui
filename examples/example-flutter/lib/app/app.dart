@@ -10,29 +10,24 @@ import 'package:expression_ui_example/ui/views/pixel_perfection/pixel_perfection
 import 'package:expression_ui_example/ui/views/composable/composable_view.dart';
 // @stacked-import
 
-@StackedApp(
-  routes: [
-    MaterialRoute(page: HomeView),
-    MaterialRoute(page: StartupView),
-    MaterialRoute(page: CrossFrameworkView),
-    MaterialRoute(page: DeveloperFriendlyView),
-    MaterialRoute(page: PixelPerfectionView),
-    MaterialRoute(page: ComposableView),
+@StackedApp(routes: [
+  MaterialRoute(page: HomeView),
+  MaterialRoute(page: StartupView),
+  MaterialRoute(page: CrossFrameworkView),
+  MaterialRoute(page: DeveloperFriendlyView),
+  MaterialRoute(page: PixelPerfectionView),
+  MaterialRoute(page: ComposableView),
 // @stacked-route
-  ],
-  dependencies: [
-    LazySingleton(classType: BottomSheetService),
-    LazySingleton(classType: DialogService),
-    LazySingleton(classType: NavigationService),
-    // @stacked-service
-  ],
-  bottomsheets: [
-    StackedBottomsheet(classType: NoticeSheet),
-    // @stacked-bottom-sheet
-  ],
-  dialogs: [
-    StackedDialog(classType: InfoAlertDialog),
-    // @stacked-dialog
-  ],
-)
+], dependencies: [
+  LazySingleton(classType: BottomSheetService),
+  LazySingleton(classType: DialogService),
+  LazySingleton(classType: NavigationService),
+  // @stacked-service
+], bottomsheets: [
+  StackedBottomsheet(classType: NoticeSheet),
+  // @stacked-bottom-sheet
+], dialogs: [
+  StackedDialog(classType: InfoAlertDialog),
+  // @stacked-dialog
+], logger: StackedLogger(loggerOutputs: [CrashlyticsOutput()]))
 class App {}
