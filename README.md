@@ -1,6 +1,6 @@
 # expression ui 
 
-A alternative way to build mobile app UI on EVERY major framework (Flutter, React-Native, SwiftUI, iOS Native, and Kotlin).
+A alternative way to build mobile app UI on EVERY major framework (Flutter, React-Native, SwiftUI, and Kotlin).
 
 ## [Get tutorials and updates in your inbox](https://appsplusplus.carrd.co/)
 
@@ -9,25 +9,27 @@ A alternative way to build mobile app UI on EVERY major framework (Flutter, Reac
 Currently the app building process works as follows:
 
 1. Create or get a figma design
-2. Spend hours writing the code to render that Figma design
+2. Spend hours writing the UI code to render that Figma design
   2a. _Every developer does it different_
 3. Run the app and tweak the UI as you are building it
+4. If the design changes, the cycle repeats from #2.
 
 This process is accepted, and when I spoke about it, I was told to ["copy paste my old code" to move faster and I should stop complaining](https://www.reddit.com/r/FlutterDev/comments/1bieuy5/im_tired_of_building_flutter_uis/). 
 
 But I don't like step 2 in the process above.
 
-What if we could go from design directly to pixels. 
+What if we could go from design directly to UI. 
 
 That's what I'm exploring with this framework.
 
 The idea is:
-1. Design your UI on a canvas tool
-2. We render it pixel-perfect using an open-source rendering runtime
+1. Design your UI in a canvas tool such as Figma.
+2. Then, you import and use the specific components or screens by referencing their name in the the design tool.
+3. We render it pixel-perfect using an open-source rendering runtime.
 
 ## Technical research
 
-If you're interested in helping I would appreciate that.
+If you're interested in helping I would appreciate that. There are currently [examples](https://github.com/FilledStacks/expression-ui/tree/main/examples) in this repo for Flutter, React Native, SwiftUI, and Kotlin.
 
 I'm currently doing the Flutter parts, I would love for react-native, iOS native, Android native and all of those to be developed / researched at the same time. 
 
@@ -60,7 +62,7 @@ These tasks are all related to the visuals and exploring how we can actually mak
 
 These tasks are all related to improving the dev experience, majority of them will probably be code generation using dart cli (not the build_runner package). 
 
-The goal would be to read the rive file and use the data in there to improve the developers experience.
+The goal would be to read the open-source rendering runtime by rive and use it to improve the developers experience.
 
 - [ ] Automatic binding of click events and callbacks
 - [ ] Type safe referencing of all states, animations, events and artboards 
