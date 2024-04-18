@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Expression-UI</string>
+    <string name="intro_view">intro-view</string>
+    <string name="cross_framework_view">cross-framework-view</string>
+    <string name="developer_friendly_view">developer-friendly-view</string>
+    <string name="pixel_perfection_view">pixel-perfection-view</string>
+    <string name="composable_view">composable-view</string>
+</resources>
