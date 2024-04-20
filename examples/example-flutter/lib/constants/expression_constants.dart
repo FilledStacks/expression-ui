@@ -1,4 +1,4 @@
-const String ksExpressionUIFilePath = 'assets/expressionui.riv';
+const String ksExpressionUIFilePath = 'assets/app.riv';
 
 const String ksCrossFrameworkView = 'cross-framework-view';
 const String ksDeveloperFriendlyView = 'developer-friendly-view';

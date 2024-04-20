@@ -29,5 +29,5 @@ import 'package:expression_ui_example/ui/views/composable/composable_view.dart';
 ], dialogs: [
   StackedDialog(classType: InfoAlertDialog),
   // @stacked-dialog
-], logger: StackedLogger(loggerOutputs: [CrashlyticsOutput()]))
+])
 class App {}

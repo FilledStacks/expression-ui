@@ -15,7 +15,10 @@ class StartupView extends StackedView<StartupViewModel> {
   ) {
     return Scaffold(
       body: ExpressionView(
-        artboardName: 'intro-view',
+        artboardName:
+            MediaQuery.of(context).platformBrightness == Brightness.light
+                ? 'home-light'
+                : 'home-dark',
         onEvent: (_) => viewModel.navigateToNextView(),
       ),
     );
