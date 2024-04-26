@@ -16,10 +16,11 @@ import 'package:expression_ui_example/ui/views/pixel_perfection/pixel_perfection
     as _i6;
 import 'package:expression_ui_example/ui/views/startup/startup_view.dart'
     as _i3;
-import 'package:flutter/material.dart' as _i8;
+import 'package:expression_ui_example/ui/views/theme/theme_view.dart' as _i8;
+import 'package:flutter/material.dart' as _i9;
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart' as _i1;
-import 'package:stacked_services/stacked_services.dart' as _i9;
+import 'package:stacked_services/stacked_services.dart' as _i10;
 
 class Routes {
   static const homeView = '/home-view';
@@ -34,6 +35,8 @@ class Routes {
 
   static const composableView = '/composable-view';
 
+  static const themeView = '/theme-view';
+
   static const all = <String>{
     homeView,
     startupView,
@@ -41,6 +44,7 @@ class Routes {
     developerFriendlyView,
     pixelPerfectionView,
     composableView,
+    themeView,
   };
 }
 
@@ -70,42 +74,52 @@ class StackedRouter extends _i1.RouterBase {
       Routes.composableView,
       page: _i7.ComposableView,
     ),
+    _i1.RouteDef(
+      Routes.themeView,
+      page: _i8.ThemeView,
+    ),
   ];
 
   final _pagesMap = <Type, _i1.StackedRouteFactory>{
     _i2.HomeView: (data) {
-      return _i8.MaterialPageRoute<dynamic>(
+      return _i9.MaterialPageRoute<dynamic>(
         builder: (context) => const _i2.HomeView(),
         settings: data,
       );
     },
     _i3.StartupView: (data) {
-      return _i8.MaterialPageRoute<dynamic>(
+      return _i9.MaterialPageRoute<dynamic>(
         builder: (context) => const _i3.StartupView(),
         settings: data,
       );
     },
     _i4.CrossFrameworkView: (data) {
-      return _i8.MaterialPageRoute<dynamic>(
+      return _i9.MaterialPageRoute<dynamic>(
         builder: (context) => const _i4.CrossFrameworkView(),
         settings: data,
       );
     },
     _i5.DeveloperFriendlyView: (data) {
-      return _i8.MaterialPageRoute<dynamic>(
+      return _i9.MaterialPageRoute<dynamic>(
         builder: (context) => const _i5.DeveloperFriendlyView(),
         settings: data,
       );
     },
     _i6.PixelPerfectionView: (data) {
-      return _i8.MaterialPageRoute<dynamic>(
+      return _i9.MaterialPageRoute<dynamic>(
         builder: (context) => const _i6.PixelPerfectionView(),
         settings: data,
       );
     },
     _i7.ComposableView: (data) {
-      return _i8.MaterialPageRoute<dynamic>(
+      return _i9.MaterialPageRoute<dynamic>(
         builder: (context) => const _i7.ComposableView(),
+        settings: data,
+      );
+    },
+    _i8.ThemeView: (data) {
+      return _i9.MaterialPageRoute<dynamic>(
+        builder: (context) => const _i8.ThemeView(),
         settings: data,
       );
     },
@@ -118,7 +132,7 @@ class StackedRouter extends _i1.RouterBase {
   Map<Type, _i1.StackedRouteFactory> get pagesMap => _pagesMap;
 }
 
-extension NavigatorStateExtension on _i9.NavigationService {
+extension NavigatorStateExtension on _i10.NavigationService {
   Future<dynamic> navigateToHomeView([
     int? routerId,
     bool preventDuplicates = true,
@@ -203,6 +217,20 @@ extension NavigatorStateExtension on _i9.NavigationService {
         transition: transition);
   }
 
+  Future<dynamic> navigateToThemeView([
+    int? routerId,
+    bool preventDuplicates = true,
+    Map<String, String>? parameters,
+    Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
+        transition,
+  ]) async {
+    return navigateTo<dynamic>(Routes.themeView,
+        id: routerId,
+        preventDuplicates: preventDuplicates,
+        parameters: parameters,
+        transition: transition);
+  }
+
   Future<dynamic> replaceWithHomeView([
     int? routerId,
     bool preventDuplicates = true,
@@ -281,6 +309,20 @@ extension NavigatorStateExtension on _i9.NavigationService {
         transition,
   ]) async {
     return replaceWith<dynamic>(Routes.composableView,
+        id: routerId,
+        preventDuplicates: preventDuplicates,
+        parameters: parameters,
+        transition: transition);
+  }
+
+  Future<dynamic> replaceWithThemeView([
+    int? routerId,
+    bool preventDuplicates = true,
+    Map<String, String>? parameters,
+    Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
+        transition,
+  ]) async {
+    return replaceWith<dynamic>(Routes.themeView,
         id: routerId,
         preventDuplicates: preventDuplicates,
         parameters: parameters,
