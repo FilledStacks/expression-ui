@@ -10,7 +10,6 @@ Currently the app building process works as follows:
 
 1. Create or get a figma design
 2. Spend hours writing the UI code to render that Figma design
-  2a. _Every developer does it different_
 3. Run the app and tweak the UI as you are building it
 4. If the design changes, the cycle repeats from #2.
 
@@ -26,6 +25,16 @@ The idea is:
 1. Design your UI in a canvas tool such as Figma.
 2. Then, you import and use the specific components or screens by referencing their name in the the design tool.
 3. We render it pixel-perfect using an open-source rendering runtime.
+
+## Demo Examples
+
+- [Partial View Composition: Dialog and app bar](https://x.com/DaneMackier/status/1777690003558023169)
+- [Partial View Composition: Bottom Navigation](https://x.com/DaneMackier/status/1775477191523827789)
+- [Full View Design](https://x.com/DaneMackier/status/1779830718941503859)
+- [Responsive UI: Mobile, Tablet, Desktop, Watch](https://x.com/DaneMackier/status/1772237910252621825)
+- [ExpressionUI working in SwiftUI](https://x.com/DaneMackier/status/1775730944395125118)
+- [Scrollable Views with Composition](https://x.com/DaneMackier/status/1774438194567602622)
+
 
 ## Technical research
 
