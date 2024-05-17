@@ -1,5 +1,6 @@
 import 'dart:typed_data';
 
+import 'package:expression_cli/src/core/core.dart';
 import 'package:expression_cli/src/core/field_types/core_bool_type.dart';
 import 'package:expression_cli/src/core/field_types/core_bytes_type.dart';
 import 'package:expression_cli/src/core/field_types/core_callback_type.dart';
@@ -8,6 +9,7 @@ import 'package:expression_cli/src/core/field_types/core_double_type.dart';
 import 'package:expression_cli/src/core/field_types/core_field_type.dart';
 import 'package:expression_cli/src/core/field_types/core_string_type.dart';
 import 'package:expression_cli/src/core/field_types/core_uint_type.dart';
+import 'package:expression_cli/src/rive/artboard.dart';
 import 'package:expression_cli/src/rive/property_keys/property_keys.dart';
 
 class RiveCoreContext {
@@ -39,7 +41,8 @@ class RiveCoreContext {
       case PropertyKeys.distanceConstraintBaseModeValuePropertyKey:
       case PropertyKeys.transformSpaceConstraintBaseSourceSpaceValuePropertyKey:
       case PropertyKeys.transformSpaceConstraintBaseDestSpaceValuePropertyKey:
-      case PropertyKeys.transformComponentConstraintBaseMinMaxSpaceValuePropertyKey:
+      case PropertyKeys
+            .transformComponentConstraintBaseMinMaxSpaceValuePropertyKey:
       case PropertyKeys.iKConstraintBaseParentBoneCountPropertyKey:
       case PropertyKeys.drawableBaseBlendModeValuePropertyKey:
       case PropertyKeys.drawableBaseDrawableFlagsPropertyKey:
@@ -332,5 +335,15 @@ class RiveCoreContext {
       default:
         return null;
     }
-  } 
+  }
+
+  static void setObjectProperty(Core object, int propertyKey, Object value) {
+    switch (propertyKey) {
+      case PropertyKeys.componentBaseNamePropertyKey:
+        if (object is Artboard && value is String) {
+          object.name = value;
+        }
+        break;
+    }
+  }
 }

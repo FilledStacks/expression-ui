@@ -1,7 +1,6 @@
 import 'dart:collection';
 
-import 'package:expression_cli/src/runtime/exceptions/rive_format_error_exception.dart';
-import 'package:expression_cli/src/runtime/exceptions/rive_unsupported_version_exception.dart';
+import 'package:expression_cli/src/runtime/exceptions/exceptions.dart';
 import 'package:rive_common/utilities.dart';
 
 /// Stores the minor and major version of Rive. Versions with the same major

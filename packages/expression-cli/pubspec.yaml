@@ -8,6 +8,8 @@ environment:
 
 dependencies:
   args: ^2.4.2
+  collection: ^1.18.0
+  path: ^1.9.0
   rive_common: 0.4.5
 
 dev_dependencies:
