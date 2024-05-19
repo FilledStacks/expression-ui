@@ -2,10 +2,12 @@ import 'dart:collection';
 import 'dart:io';
 import 'dart:typed_data';
 
+import 'package:collection/collection.dart';
 import 'package:expression_cli/src/core/core.dart';
 import 'package:expression_cli/src/core/field_types/core_field_type.dart';
 import 'package:expression_cli/src/rive/artboard.dart';
 import 'package:expression_cli/src/rive/rive_core_context.dart';
+import 'package:expression_cli/src/rive/text_value_run.dart';
 import 'package:expression_cli/src/runtime/exceptions/exceptions.dart';
 import 'package:expression_cli/src/runtime/runtime_header.dart';
 import 'package:rive_common/utilities.dart';
@@ -16,12 +18,11 @@ Core? _readRuntimeObject(
 ) {
   int coreObjectKey = reader.readVarUint();
 
-  Core? instance;
-  switch (coreObjectKey) {
-    case Artboard.typeKey:
-      instance = Artboard();
-      break;
-  }
+  Core? instance = switch (coreObjectKey) {
+    Artboard.typeKey => Artboard(),
+    TextValueRun.typeKey => TextValueRun(),
+    _ => null,
+  };
 
   while (true) {
     int propertyKey = reader.readVarUint();
@@ -72,6 +73,12 @@ class RiveFile {
   /// Returns list of [Artboard]s present in the [RiveFile].
   List<Artboard> get artboards => _artboards;
 
+  /// Finds an artboard by specified name.
+  ///
+  /// If the artboard with the name is not found, it returns null.
+  Artboard? artboardByName(String artboardName) =>
+      _artboards.firstWhereOrNull((artboard) => artboard.name == artboardName);
+
   /// Load a list of bytes from a file on the local filesystem at [path].
   static Future<Uint8List?> fileBytes(String path) => File(path).readAsBytes();
 
@@ -101,10 +108,29 @@ class RiveFile {
   RiveFile._(BinaryReader reader, this.header) {
     /// Property fields table of contents
     final propertyToField = _propertyToFieldLookup(header);
+    final importStack = ImportStack();
 
     while (!reader.isEOF) {
       final object = _readRuntimeObject(reader, propertyToField);
-      if (object is Artboard) _artboards.add(object);
+      if (object is Artboard) {
+        if (importStack.latest(Artboard.typeKey) != null) {
+          final artboard = importStack.latest<Artboard>(Artboard.typeKey);
+          if (artboard != null) _artboards.add(artboard);
+        }
+        importStack.makeLatest(Artboard.typeKey, object);
+      }
+      if (object is TextValueRun) {
+        final artboard = importStack.latest<Artboard>(Artboard.typeKey);
+        if (artboard != null) {
+          artboard.addCoreObject(object);
+          importStack.makeLatest(Artboard.typeKey, artboard);
+        }
+      }
+    }
+
+    final lastArtboard = importStack.latest<Artboard>(Artboard.typeKey);
+    if (lastArtboard != null && !_artboards.contains(lastArtboard)) {
+      _artboards.add(lastArtboard);
     }
   }
 
@@ -121,7 +147,7 @@ class RiveFile {
   }
 
   /// Imports a Rive file from local path
-  /// 
+  ///
   /// Will throw [RiveFormatErrorException] if data is malformed. Will throw
   /// [RiveUnsupportedVersionException] if the version is not supported.
   static Future<RiveFile> file(String path) async {
