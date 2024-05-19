@@ -17,6 +17,7 @@ String loadFileFullPath(String fileName) {
     throw Exception('Not a Rive runtime file');
   }
 
-  String fullFilePath = path.join(Directory.current.path, 'test', 'assets', fileName);
-  return fullFilePath;
+  final directory = Directory.current.path;
+  final fullPath = path.join(directory, 'test', 'assets', fileName);
+  return fullPath;
 }
