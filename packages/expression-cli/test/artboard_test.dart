@@ -34,4 +34,14 @@ void main() {
     expect(lastTextRun.name, 'appbar-title');
     expect(lastTextRun.text, 'Rive Runtime');
   });
+
+  test('Artboard has correct number of state machines', () {
+    final screenReaderAB = riveFile.artboardByName('Screen Reader');
+    expect(screenReaderAB!.stateMachines.length, 1); 
+  });
+
+  test('Artboard has correct state machine name', () {
+    final screenReaderAB = riveFile.artboardByName('Screen Reader');
+    expect(screenReaderAB!.stateMachines.first.name, 'State Machine 1'); 
+  });
 }
