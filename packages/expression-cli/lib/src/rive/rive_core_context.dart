@@ -9,6 +9,7 @@ import 'package:expression_cli/src/core/field_types/core_double_type.dart';
 import 'package:expression_cli/src/core/field_types/core_field_type.dart';
 import 'package:expression_cli/src/core/field_types/core_string_type.dart';
 import 'package:expression_cli/src/core/field_types/core_uint_type.dart';
+import 'package:expression_cli/src/rive/animation.dart';
 import 'package:expression_cli/src/rive/component.dart';
 import 'package:expression_cli/src/rive/property_keys/property_keys.dart';
 import 'package:expression_cli/src/rive/text_value_run.dart';
@@ -349,6 +350,12 @@ class RiveCoreContext {
         if (object is TextValueRun && value is String) {
           object.text = value;
         }
+        break;
+      case PropertyKeys.animationBaseNamePropertyKey:
+        if (object is Animation && value is String) {
+          object.name = value;
+        }
+        break;
     }
   }
 }

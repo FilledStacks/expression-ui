@@ -1,5 +1,6 @@
 import 'package:expression_cli/src/core/core.dart';
 import 'package:expression_cli/src/rive/component.dart';
+import 'package:expression_cli/src/rive/state_machine.dart';
 import 'package:expression_cli/src/rive/text_value_run.dart';
 
 class Artboard extends Component {
@@ -13,6 +14,10 @@ class Artboard extends Component {
   /// List of [TextValueRun]s in the artboard
   Iterable<TextValueRun> get textValueRuns =>
       _coreObjects.whereType<TextValueRun>();
+
+  /// List of [StateMachine]s in the artboard
+  Iterable<StateMachine> get stateMachines =>
+      _coreObjects.whereType<StateMachine>();
 
   /// Adds a core object to this artboard.
   void addCoreObject(Core object) {

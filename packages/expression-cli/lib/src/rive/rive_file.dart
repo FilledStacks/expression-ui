@@ -7,6 +7,7 @@ import 'package:expression_cli/src/core/core.dart';
 import 'package:expression_cli/src/core/field_types/core_field_type.dart';
 import 'package:expression_cli/src/rive/artboard.dart';
 import 'package:expression_cli/src/rive/rive_core_context.dart';
+import 'package:expression_cli/src/rive/state_machine.dart';
 import 'package:expression_cli/src/rive/text_value_run.dart';
 import 'package:expression_cli/src/runtime/exceptions/exceptions.dart';
 import 'package:expression_cli/src/runtime/runtime_header.dart';
@@ -21,6 +22,7 @@ Core? _readRuntimeObject(
   Core? instance = switch (coreObjectKey) {
     Artboard.typeKey => Artboard(),
     TextValueRun.typeKey => TextValueRun(),
+    StateMachine.typeKey => StateMachine(),
     _ => null,
   };
 
@@ -113,13 +115,19 @@ class RiveFile {
     while (!reader.isEOF) {
       final object = _readRuntimeObject(reader, propertyToField);
       if (object is Artboard) {
-        if (importStack.latest(Artboard.typeKey) != null) {
+        if (importStack.latest<Artboard>(Artboard.typeKey) != null) {
           final artboard = importStack.latest<Artboard>(Artboard.typeKey);
           if (artboard != null) _artboards.add(artboard);
         }
         importStack.makeLatest(Artboard.typeKey, object);
-      }
-      if (object is TextValueRun) {
+      } else if (object is TextValueRun) {
+        final artboard = importStack.latest<Artboard>(Artboard.typeKey);
+        if (artboard != null) {
+          artboard.addCoreObject(object);
+          importStack.makeLatest(Artboard.typeKey, artboard);
+        }
+      } else if (object is StateMachine) {
+        importStack.makeLatest(StateMachine.typeKey, object);
         final artboard = importStack.latest<Artboard>(Artboard.typeKey);
         if (artboard != null) {
           artboard.addCoreObject(object);
