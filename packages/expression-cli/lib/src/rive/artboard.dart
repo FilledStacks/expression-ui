@@ -25,6 +25,14 @@ class Artboard extends Component {
     return _coreObjects.add(object);
   }
 
+  /// Removes a core object from this artboard
+  bool removeCoreObject(Core object) {
+    if (!_coreObjects.contains(object)) return false;
+    return _coreObjects.remove(object);
+  }
+
   @override
-  String toString() => 'Artboard(name: $name)';
+  String toString() =>
+      'Artboard(name: $name, textRuns: ${textValueRuns.toList()}, '
+      'stateMachines: ${stateMachines.toList()})';
 }

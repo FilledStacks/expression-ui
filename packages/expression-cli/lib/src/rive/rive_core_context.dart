@@ -12,6 +12,9 @@ import 'package:expression_cli/src/core/field_types/core_uint_type.dart';
 import 'package:expression_cli/src/rive/animation.dart';
 import 'package:expression_cli/src/rive/component.dart';
 import 'package:expression_cli/src/rive/property_keys/property_keys.dart';
+import 'package:expression_cli/src/rive/state_machine_bool.dart';
+import 'package:expression_cli/src/rive/state_machine_component.dart';
+import 'package:expression_cli/src/rive/state_machine_number.dart';
 import 'package:expression_cli/src/rive/text_value_run.dart';
 
 class RiveCoreContext {
@@ -346,6 +349,11 @@ class RiveCoreContext {
           object.name = value;
         }
         break;
+      case PropertyKeys.stateMachineComponentBaseNamePropertyKey:
+        if (object is StateMachineComponent && value is String) {
+          object.name = value;
+        }
+        break;
       case PropertyKeys.textValueRunBaseTextPropertyKey:
         if (object is TextValueRun && value is String) {
           object.text = value;
@@ -354,6 +362,16 @@ class RiveCoreContext {
       case PropertyKeys.animationBaseNamePropertyKey:
         if (object is Animation && value is String) {
           object.name = value;
+        }
+        break;
+      case PropertyKeys.stateMachineBoolBaseValuePropertyKey:
+        if (object is StateMachineBool && value is bool) {
+          object.value = value;
+        }
+        break;
+      case PropertyKeys.stateMachineNumberBaseValuePropertyKey:
+        if (object is StateMachineNumber && value is double) {
+          object.value = value;
         }
         break;
     }
