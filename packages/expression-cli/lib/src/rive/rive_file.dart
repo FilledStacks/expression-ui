@@ -121,36 +121,49 @@ class RiveFile {
 
     while (!reader.isEOF) {
       final object = _readRuntimeObject(reader, propertyToField);
-      if (object is Artboard) {
-        if (importStack.latest<Artboard>(Artboard.typeKey) != null) {
+      if (object == null) continue;
+      switch (object.coreType) {
+        case Artboard.typeKey:
+          if (importStack.latest<Artboard>(Artboard.typeKey) != null) {
+            final artboard = importStack.latest<Artboard>(Artboard.typeKey);
+            if (artboard != null) _artboards.add(artboard);
+          }
+          importStack.makeLatest(Artboard.typeKey, object);
+          break;
+        case TextValueRun.typeKey:
           final artboard = importStack.latest<Artboard>(Artboard.typeKey);
-          if (artboard != null) _artboards.add(artboard);
-        }
-        importStack.makeLatest(Artboard.typeKey, object);
-      } else if (object is TextValueRun) {
-        final artboard = importStack.latest<Artboard>(Artboard.typeKey);
-        if (artboard != null) {
-          artboard.addCoreObject(object);
-          importStack.makeLatest(Artboard.typeKey, artboard);
-        }
-      } else if (object is StateMachine) {
-        importStack.makeLatest(StateMachine.typeKey, object);
-        final artboard = importStack.latest<Artboard>(Artboard.typeKey);
-        if (artboard != null) {
-          artboard.addCoreObject(object);
-          importStack.makeLatest(Artboard.typeKey, artboard);
-        }
-      } else if (object is StateMachineComponent) {
-        final machine = importStack.latest<StateMachine>(StateMachine.typeKey);
-        final artboard = importStack.latest<Artboard>(Artboard.typeKey);
-        if (artboard != null && machine != null) {
-          artboard.removeCoreObject(machine);
-          machine.addStateMachineComponent(object);
-          artboard.addCoreObject(machine);
+          if (artboard != null) {
+            artboard.addCoreObject(object);
+            importStack.makeLatest(Artboard.typeKey, artboard);
+          }
+          break;
+        case StateMachine.typeKey:
+          importStack.makeLatest(StateMachine.typeKey, object);
+          final artboard = importStack.latest<Artboard>(Artboard.typeKey);
+          if (artboard != null) {
+            artboard.addCoreObject(object);
+            importStack.makeLatest(Artboard.typeKey, artboard);
+          }
+          break;
+        case StateMachineBool.typeKey:
+        case StateMachineNumber.typeKey:
+        case StateMachineTrigger.typeKey:
+          final stateMachine = importStack.latest<StateMachine>(
+            StateMachine.typeKey,
+          );
+          final artboard = importStack.latest<Artboard>(Artboard.typeKey);
+          
+          if (artboard != null && stateMachine != null) {
+            artboard.removeCoreObject(stateMachine);
+            stateMachine.addStateMachineComponent(
+              object as StateMachineComponent,
+            );
+            artboard.addCoreObject(stateMachine);
 
-          importStack.makeLatest(Artboard.typeKey, artboard);
-          importStack.makeLatest(StateMachine.typeKey, machine);
-        }
+            importStack.makeLatest(Artboard.typeKey, artboard);
+            importStack.makeLatest(StateMachine.typeKey, stateMachine);
+          }
+          break;
       }
     }
 
