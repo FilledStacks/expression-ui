@@ -1,0 +1,35 @@
+import 'package:expression_ui/expression_ui.dart';
+import 'package:flutter/material.dart';
+
+class {{viewName}}ExpressionView extends StatelessWidget {
+    {{#events}}
+    final Function()? {{eventFunctionName}};
+    {{/events}}
+
+  const {{viewName}}ExpressionView({
+    super.key,
+    {{#events}}
+    this.{{eventFunctionName}},
+    {{/events}}
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return BaseExpressionView(
+      filePath: {{filePath}},
+      artboardName: {{artboardName}},
+      onEvent: onEventHandler,
+    );
+  }
+
+  void onEventHandler(StateEvent event) {
+    switch (event.name) {
+    {{#events}}
+      case '{{rawEvent}}':
+        {{eventFunctionName}}?.call();
+        break;
+    {{/events}}
+    
+    }
+  }
+}

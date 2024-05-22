@@ -6,6 +6,7 @@ const String ksEnableAnalytics = 'enable-analytics';
 const String ksGlobal = 'global';
 const String ksList = 'list';
 const String ksPath = 'path';
+const String ksFramework = 'framework';
 const String ksSandboxSession = 'sandbox-session';
 const String ksAdditionalCommands = 'additional-commands';
 const String ksPub = 'pub';
@@ -26,4 +27,11 @@ const List<String> pubGlobalActivateArguments = [
   ksGlobal,
   ksActivate,
   ksExpressionUICli
+];
+
+const List<String> allowedFrameworks = [
+  'flutter',
+  'react-native',
+  'swift-ui',
+  'kotlin',
 ];
