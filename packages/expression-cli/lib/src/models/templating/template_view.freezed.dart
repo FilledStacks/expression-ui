@@ -29,6 +29,10 @@ mixin _$TemplateView {
   /// Events present in the state machine for this arboard
   List<TemplateEvent> get events => throw _privateConstructorUsedError;
 
+  /// TextRuns are all the text values that can dynamically be replaced in
+  /// the current [artboardName]
+  List<TemplateTextRun> get textRuns => throw _privateConstructorUsedError;
+
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $TemplateViewCopyWith<TemplateView> get copyWith =>
@@ -41,7 +45,11 @@ abstract class $TemplateViewCopyWith<$Res> {
           TemplateView value, $Res Function(TemplateView) then) =
       _$TemplateViewCopyWithImpl<$Res, TemplateView>;
   @useResult
-  $Res call({String artboardName, String filePath, List<TemplateEvent> events});
+  $Res call(
+      {String artboardName,
+      String filePath,
+      List<TemplateEvent> events,
+      List<TemplateTextRun> textRuns});
 }
 
 /// @nodoc
@@ -60,6 +68,7 @@ class _$TemplateViewCopyWithImpl<$Res, $Val extends TemplateView>
     Object? artboardName = null,
     Object? filePath = null,
     Object? events = null,
+    Object? textRuns = null,
   }) {
     return _then(_value.copyWith(
       artboardName: null == artboardName
@@ -74,6 +83,10 @@ class _$TemplateViewCopyWithImpl<$Res, $Val extends TemplateView>
           ? _value.events
           : events // ignore: cast_nullable_to_non_nullable
               as List<TemplateEvent>,
+      textRuns: null == textRuns
+          ? _value.textRuns
+          : textRuns // ignore: cast_nullable_to_non_nullable
+              as List<TemplateTextRun>,
     ) as $Val);
   }
 }
@@ -86,7 +99,11 @@ abstract class _$$TemplateViewImplCopyWith<$Res>
       __$$TemplateViewImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String artboardName, String filePath, List<TemplateEvent> events});
+  $Res call(
+      {String artboardName,
+      String filePath,
+      List<TemplateEvent> events,
+      List<TemplateTextRun> textRuns});
 }
 
 /// @nodoc
@@ -103,6 +120,7 @@ class __$$TemplateViewImplCopyWithImpl<$Res>
     Object? artboardName = null,
     Object? filePath = null,
     Object? events = null,
+    Object? textRuns = null,
   }) {
     return _then(_$TemplateViewImpl(
       artboardName: null == artboardName
@@ -117,6 +135,10 @@ class __$$TemplateViewImplCopyWithImpl<$Res>
           ? _value._events
           : events // ignore: cast_nullable_to_non_nullable
               as List<TemplateEvent>,
+      textRuns: null == textRuns
+          ? _value._textRuns
+          : textRuns // ignore: cast_nullable_to_non_nullable
+              as List<TemplateTextRun>,
     ));
   }
 }
@@ -127,8 +149,10 @@ class _$TemplateViewImpl extends _TemplateView {
   _$TemplateViewImpl(
       {required this.artboardName,
       required this.filePath,
-      final List<TemplateEvent> events = const []})
+      final List<TemplateEvent> events = const [],
+      final List<TemplateTextRun> textRuns = const []})
       : _events = events,
+        _textRuns = textRuns,
         super._();
 
   factory _$TemplateViewImpl.fromJson(Map<String, dynamic> json) =>
@@ -154,9 +178,23 @@ class _$TemplateViewImpl extends _TemplateView {
     return EqualUnmodifiableListView(_events);
   }
 
+  /// TextRuns are all the text values that can dynamically be replaced in
+  /// the current [artboardName]
+  final List<TemplateTextRun> _textRuns;
+
+  /// TextRuns are all the text values that can dynamically be replaced in
+  /// the current [artboardName]
+  @override
+  @JsonKey()
+  List<TemplateTextRun> get textRuns {
+    if (_textRuns is EqualUnmodifiableListView) return _textRuns;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_textRuns);
+  }
+
   @override
   String toString() {
-    return 'TemplateView(artboardName: $artboardName, filePath: $filePath, events: $events)';
+    return 'TemplateView(artboardName: $artboardName, filePath: $filePath, events: $events, textRuns: $textRuns)';
   }
 
   @override
@@ -168,13 +206,18 @@ class _$TemplateViewImpl extends _TemplateView {
                 other.artboardName == artboardName) &&
             (identical(other.filePath, filePath) ||
                 other.filePath == filePath) &&
-            const DeepCollectionEquality().equals(other._events, _events));
+            const DeepCollectionEquality().equals(other._events, _events) &&
+            const DeepCollectionEquality().equals(other._textRuns, _textRuns));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, artboardName, filePath,
-      const DeepCollectionEquality().hash(_events));
+  int get hashCode => Object.hash(
+      runtimeType,
+      artboardName,
+      filePath,
+      const DeepCollectionEquality().hash(_events),
+      const DeepCollectionEquality().hash(_textRuns));
 
   @JsonKey(ignore: true)
   @override
@@ -194,7 +237,8 @@ abstract class _TemplateView extends TemplateView {
   factory _TemplateView(
       {required final String artboardName,
       required final String filePath,
-      final List<TemplateEvent> events}) = _$TemplateViewImpl;
+      final List<TemplateEvent> events,
+      final List<TemplateTextRun> textRuns}) = _$TemplateViewImpl;
   _TemplateView._() : super._();
 
   factory _TemplateView.fromJson(Map<String, dynamic> json) =
@@ -212,6 +256,11 @@ abstract class _TemplateView extends TemplateView {
 
   /// Events present in the state machine for this arboard
   List<TemplateEvent> get events;
+  @override
+
+  /// TextRuns are all the text values that can dynamically be replaced in
+  /// the current [artboardName]
+  List<TemplateTextRun> get textRuns;
   @override
   @JsonKey(ignore: true)
   _$$TemplateViewImplCopyWith<_$TemplateViewImpl> get copyWith =>

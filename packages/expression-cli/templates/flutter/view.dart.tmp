@@ -6,11 +6,18 @@ class {{viewName}}ExpressionView extends StatelessWidget {
     final Function()? {{eventFunctionName}};
     {{/events}}
 
+    {{#textRuns}}
+    final String? {{propertyName}};
+    {{/textRuns}}
+
   const {{viewName}}ExpressionView({
     super.key,
     {{#events}}
     this.{{eventFunctionName}},
     {{/events}}
+    {{#textRuns}}
+    this.{{propertyName}},
+    {{/textRuns}}
   });
 
   @override
@@ -37,7 +44,7 @@ class {{viewName}}ExpressionView extends StatelessWidget {
   Map<String, String> getTextValues() {
     return {
       {{#textRuns}}
-      if ({{name}} != null) '{{name}}': {{name}}!,
+      if ({{propertyName}} != null) '{{rawName}}': {{propertyName}}!,
       {{/textRuns}}
     };
   }

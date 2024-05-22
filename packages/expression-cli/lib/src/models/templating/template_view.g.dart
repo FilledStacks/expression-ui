@@ -14,11 +14,16 @@ _$TemplateViewImpl _$$TemplateViewImplFromJson(Map<String, dynamic> json) =>
               ?.map((e) => TemplateEvent.fromJson(e as Map<String, dynamic>))
               .toList() ??
           const [],
+      textRuns: (json['textRuns'] as List<dynamic>?)
+              ?.map((e) => TemplateTextRun.fromJson(e as Map<String, dynamic>))
+              .toList() ??
+          const [],
     );
 
 Map<String, dynamic> _$$TemplateViewImplToJson(_$TemplateViewImpl instance) =>
     <String, dynamic>{
       'artboardName': instance.artboardName,
       'filePath': instance.filePath,
-      'events': instance.events,
+      'events': instance.events.map((e) => e.toJson()).toList(),
+      'textRuns': instance.textRuns.map((e) => e.toJson()).toList(),
     };

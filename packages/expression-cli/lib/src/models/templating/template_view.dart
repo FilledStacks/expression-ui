@@ -1,4 +1,5 @@
 import 'package:expression_cli/src/models/templating/template_event.dart';
+import 'package:expression_cli/src/models/templating/template_textrun.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:recase/recase.dart';
 
@@ -18,6 +19,10 @@ class TemplateView with _$TemplateView {
 
     /// Events present in the state machine for this arboard
     @Default([]) List<TemplateEvent> events,
+
+    /// TextRuns are all the text values that can dynamically be replaced in
+    /// the current [artboardName]
+    @Default([]) List<TemplateTextRun> textRuns,
   }) = _TemplateView;
 
   factory TemplateView.fromJson(Map<String, dynamic> json) =>
@@ -35,6 +40,11 @@ class TemplateView with _$TemplateView {
   Map<String, dynamic> toTemplateData() {
     final jsonMap = toJson();
     jsonMap['events'] = [...events.map((event) => event.toTemplateData())];
+
+    jsonMap['textRuns'] = [
+      ...textRuns.map((textRun) => textRun.toTemplateData())
+    ];
+
     jsonMap['viewName'] = viewName;
     return jsonMap;
   }
