@@ -1,5 +1,6 @@
 import 'package:expression_cli/src/core/core.dart';
 import 'package:expression_cli/src/rive/component.dart';
+import 'package:expression_cli/src/rive/event.dart';
 import 'package:expression_cli/src/rive/state_machine.dart';
 import 'package:expression_cli/src/rive/text_value_run.dart';
 
@@ -19,6 +20,9 @@ class Artboard extends Component {
   Iterable<StateMachine> get stateMachines =>
       _coreObjects.whereType<StateMachine>();
 
+  /// List of [Event]s in the artboard
+  Iterable<Event> get events => _coreObjects.whereType<Event>();
+
   /// Adds a core object to this artboard.
   void addCoreObject(Core object) {
     if (_coreObjects.contains(object)) return;
@@ -34,5 +38,6 @@ class Artboard extends Component {
   @override
   String toString() =>
       'Artboard(name: $name, textRuns: ${textValueRuns.toList()}, '
-      'stateMachines: ${stateMachines.toList()})';
+      'StateMachines: ${stateMachines.toList()})'
+      'Events: ${events.toList()})';
 }

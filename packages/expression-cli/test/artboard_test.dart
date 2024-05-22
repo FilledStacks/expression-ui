@@ -8,9 +8,12 @@ import 'helpers/load_file.dart';
 
 void main() {
   late RiveFile riveFile;
+  late RiveFile expressionUIRiveFile;
 
   setUp(() {
     riveFile = RiveFile.import(loadFileByteData('textruns.riv'));
+    expressionUIRiveFile =
+        RiveFile.import(loadFileByteData('expressionui.riv'));
   });
 
   test('Artboard has correct count of text runs', () {
@@ -46,6 +49,13 @@ void main() {
   test('Artboard has correct state machine name', () {
     final screenReaderAB = riveFile.artboardByName('Screen Reader');
     expect(screenReaderAB!.stateMachines.first.name, 'State Machine 1');
+  });
+
+  test('Artboard has correct events', () {
+    final crossFrameworkView =
+        expressionUIRiveFile.artboardByName('cross-framework-view');
+    expect(crossFrameworkView!.events.length, 1);
+    expect(crossFrameworkView.events.first.name, 'next_tapped');
   });
 
   test('State Machine has correct inputs', () {

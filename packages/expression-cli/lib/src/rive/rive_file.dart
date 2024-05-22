@@ -6,6 +6,7 @@ import 'package:collection/collection.dart';
 import 'package:expression_cli/src/core/core.dart';
 import 'package:expression_cli/src/core/field_types/core_field_type.dart';
 import 'package:expression_cli/src/rive/artboard.dart';
+import 'package:expression_cli/src/rive/event.dart';
 import 'package:expression_cli/src/rive/rive_core_context.dart';
 import 'package:expression_cli/src/rive/state_machine.dart';
 import 'package:expression_cli/src/rive/state_machine_bool.dart';
@@ -30,6 +31,7 @@ Core? _readRuntimeObject(
     StateMachineBool.typeKey => StateMachineBool(),
     StateMachineNumber.typeKey => StateMachineNumber(),
     StateMachineTrigger.typeKey => StateMachineTrigger(),
+    Event.typeKey => Event(),
     _ => null,
   };
 
@@ -131,6 +133,7 @@ class RiveFile {
           importStack.makeLatest(Artboard.typeKey, object);
           break;
         case TextValueRun.typeKey:
+        case Event.typeKey:
           final artboard = importStack.latest<Artboard>(Artboard.typeKey);
           if (artboard != null) {
             artboard.addCoreObject(object);
@@ -152,7 +155,7 @@ class RiveFile {
             StateMachine.typeKey,
           );
           final artboard = importStack.latest<Artboard>(Artboard.typeKey);
-          
+
           if (artboard != null && stateMachine != null) {
             artboard.removeCoreObject(stateMachine);
             stateMachine.addStateMachineComponent(

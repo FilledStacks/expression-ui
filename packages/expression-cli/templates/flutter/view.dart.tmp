@@ -2,13 +2,12 @@ import 'package:expression_ui/expression_ui.dart';
 import 'package:flutter/material.dart';
 
 class {{viewName}}ExpressionView extends StatelessWidget {
-    {{#events}}
-    final Function()? {{eventFunctionName}};
-    {{/events}}
-
-    {{#textRuns}}
-    final String? {{propertyName}};
-    {{/textRuns}}
+  {{#events}}
+  final Function()? {{eventFunctionName}};
+  {{/events}}
+  {{#textRuns}}
+  final String? {{propertyName}};
+  {{/textRuns}}
 
   const {{viewName}}ExpressionView({
     super.key,
@@ -33,11 +32,10 @@ class {{viewName}}ExpressionView extends StatelessWidget {
   void onEventHandler(StateEvent event) {
     switch (event.name) {
     {{#events}}
-      case '{{rawEvent}}':
+      case '{{rawName}}':
         {{eventFunctionName}}?.call();
         break;
     {{/events}}
-    
     }
   }
 
