@@ -25,11 +25,16 @@ class TemplateView with _$TemplateView {
 
   String get viewName {
     final nameWithoutView = artboardName.replaceAll('-view', '');
-    return ReCase(nameWithoutView).camelCase;
+    return ReCase(nameWithoutView).pascalCase;
+  }
+
+  String get viewFileName {
+    return ReCase(artboardName).snakeCase;
   }
 
   Map<String, dynamic> toTemplateData() {
     final jsonMap = toJson();
+    jsonMap['events'] = [...events.map((event) => event.toTemplateData())];
     jsonMap['viewName'] = viewName;
     return jsonMap;
   }

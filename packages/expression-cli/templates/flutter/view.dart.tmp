@@ -16,8 +16,8 @@ class {{viewName}}ExpressionView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BaseExpressionView(
-      filePath: {{filePath}},
-      artboardName: {{artboardName}},
+      filePath: '{{{filePath}}}',
+      artboardName: '{{artboardName}}',
       onEvent: onEventHandler,
     );
   }

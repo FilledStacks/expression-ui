@@ -2,6 +2,7 @@ import 'package:expression_cli/src/rive/state_machine_component.dart';
 
 class StateMachineNumber extends StateMachineComponent {
   static const int typeKey = 56;
+
   @override
   int get coreType => StateMachineNumber.typeKey;
 

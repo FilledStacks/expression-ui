@@ -1,8 +1,14 @@
 import 'package:args/command_runner.dart';
 import 'package:expression_cli/src/constants/command_constants.dart';
 import 'package:expression_cli/src/constants/message_constants.dart';
+import 'package:expression_cli/src/extensions/rive_file_extensions.dart';
+import 'package:expression_cli/src/locator.dart';
+import 'package:expression_cli/src/rive/rive_file.dart';
+import 'package:expression_cli/src/services/template_service.dart';
 
 class GenerateCommand extends Command {
+  final templateService = locator<TemplateService>();
+
   @override
   String get description => ksCommandGenerateDescription;
 
@@ -26,8 +32,14 @@ class GenerateCommand extends Command {
 
   @override
   Future<void> run() async {
-    // TODO: Load the rive file using the [ksPath] value
-    // TODO: Select the template location
-    // TODO: Read the view file and generate a basic view
+    final filePath = argResults![ksPath];
+    final riveFile = await RiveFile.file(filePath);
+
+    final framework = argResults![ksFramework];
+
+    await templateService.generateCode(
+      framework: framework,
+      views: riveFile.getViews(filePath: filePath),
+    );
   }
 }

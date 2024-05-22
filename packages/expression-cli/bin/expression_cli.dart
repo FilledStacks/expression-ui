@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:args/command_runner.dart';
+import 'package:expression_cli/src/commands/generate_command.dart';
 import 'package:expression_cli/src/constants/command_constants.dart';
 import 'package:expression_cli/src/constants/message_constants.dart';
 import 'package:expression_cli/src/locator.dart';
@@ -14,11 +15,13 @@ Future<void> main(List<String> arguments) async {
   final runner = CommandRunner(
     kCommandRunnerName,
     kCommandRunnerDescription,
-  )..argParser.addFlag(
+  )
+    ..argParser.addFlag(
       'version',
       negatable: false,
       help: 'Print the tool version.',
-    );
+    )
+    ..addCommand(GenerateCommand());
 
   try {
     final argResults = runner.parse(arguments);
