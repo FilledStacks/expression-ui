@@ -10,6 +10,7 @@ dependencies:
   ansicolor: ^2.0.2
   args: ^2.4.2
   collection: ^1.18.0
+  expression_ui: ^0.2.0
   freezed_annotation: ^2.4.1
   get_it: ^7.7.0
   json_annotation: ^4.9.0
