@@ -19,6 +19,7 @@ class {{viewName}}ExpressionView extends StatelessWidget {
       filePath: '{{{filePath}}}',
       artboardName: '{{artboardName}}',
       onEvent: onEventHandler,
+      textValues: getTextValues(),
     );
   }
 
@@ -31,5 +32,13 @@ class {{viewName}}ExpressionView extends StatelessWidget {
     {{/events}}
     
     }
+  }
+
+  Map<String, String> getTextValues() {
+    return {
+      {{#textRuns}}
+      if ({{name}} != null) '{{name}}': {{name}}!,
+      {{/textRuns}}
+    };
   }
 }
