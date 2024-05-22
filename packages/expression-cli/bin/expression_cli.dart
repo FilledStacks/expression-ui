@@ -1,61 +1,45 @@
-import 'package:args/args.dart';
+import 'dart:io';
+
+import 'package:args/command_runner.dart';
+import 'package:expression_cli/src/constants/command_constants.dart';
+import 'package:expression_cli/src/constants/message_constants.dart';
+import 'package:expression_cli/src/locator.dart';
+import 'package:expression_cli/src/services/brew_service.dart';
 
 const String version = '0.0.1';
 
-ArgParser buildParser() {
-  return ArgParser()
-    ..addFlag(
-      'help',
-      abbr: 'h',
-      negatable: false,
-      help: 'Print this usage information.',
-    )
-    ..addFlag(
-      'verbose',
-      abbr: 'v',
-      negatable: false,
-      help: 'Show additional command output.',
-    )
-    ..addFlag(
+Future<void> main(List<String> arguments) async {
+  setupLocator();
+
+  final runner = CommandRunner(
+    kCommandRunnerName,
+    kCommandRunnerDescription,
+  )..argParser.addFlag(
       'version',
       negatable: false,
       help: 'Print the tool version.',
     );
-}
 
-void printUsage(ArgParser argParser) {
-  print('Usage: dart expression_cli.dart <flags> [arguments]');
-  print(argParser.usage);
-}
-
-void main(List<String> arguments) {
-  final ArgParser argParser = buildParser();
   try {
-    final ArgResults results = argParser.parse(arguments);
-    bool verbose = false;
+    final argResults = runner.parse(arguments);
 
-    // Process the parsed arguments.
-    if (results.wasParsed('help')) {
-      printUsage(argParser);
-      return;
-    }
-    if (results.wasParsed('version')) {
-      print('expression_cli version: $version');
-      return;
-    }
-    if (results.wasParsed('verbose')) {
-      verbose = true;
+    if (argResults[ksVersion]) {
+      // DEVELOPMENT NOTE:
+      // The CLI will be installed through brew so this won't work until the cli
+      // has been added to the brew tap
+      await _handleVersion();
+      exit(0);
     }
 
-    // Act on the arguments provided.
-    print('Positional arguments: ${results.rest}');
-    if (verbose) {
-      print('[VERBOSE] All arguments: ${results.arguments}');
-    }
-  } on FormatException catch (e) {
-    // Print usage information if an invalid argument was provided.
-    print(e.message);
-    print('');
-    printUsage(argParser);
+    runner.run(arguments);
+  } catch (e, _) {
+    stdout.writeln(e.toString());
+
+    exit(2);
   }
+}
+
+/// Prints version of the application.
+Future<void> _handleVersion() async {
+  stdout.writeln(await locator<BrewService>().getCurrentVersion());
 }

@@ -7,8 +7,10 @@ environment:
   sdk: ^3.3.3
 
 dependencies:
+  ansicolor: ^2.0.2
   args: ^2.4.2
   collection: ^1.18.0
+  get_it: ^7.7.0
   path: ^1.9.0
   rive_common: 0.4.5
 
