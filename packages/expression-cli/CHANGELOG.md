@@ -1,3 +1,3 @@
-## 1.0.0
+## 0.1.0
 
-- Initial version.
+- feat: Adds generate method for Flutter views
