@@ -15,4 +15,11 @@ class StateController {
       input.fire();
     }
   }
+
+  void updateNumber({required String name, required double value}) {
+    final input = inputs[name];
+    if (input != null && input is SMINumber) {
+      input.value = value;
+    }
+  }
 }

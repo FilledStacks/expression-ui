@@ -38,6 +38,9 @@ class BaseExpressionView extends StatelessWidget {
   /// on the canvas
   final bool useArtboardSize;
 
+  /// Automatically adjusts the responsive bounds based on the current device size
+  final bool responsive;
+
   const BaseExpressionView({
     super.key,
     required this.filePath,
@@ -49,6 +52,7 @@ class BaseExpressionView extends StatelessWidget {
     this.textValues = const {},
     this.controller,
     this.fit = BoxFit.cover,
+    this.responsive = true,
   });
 
   @override
@@ -58,7 +62,7 @@ class BaseExpressionView extends StatelessWidget {
       artboard: artboardName,
       useArtboardSize: useArtboardSize || scrollable,
       fit: fit,
-      onInit: onRiveFileInitialized,
+      onInit: (artboard) => onRiveFileInitialized(artboard, context),
     );
 
     if (!scrollable) {
@@ -75,7 +79,7 @@ class BaseExpressionView extends StatelessWidget {
     );
   }
 
-  void onRiveFileInitialized(Artboard artboard) {
+  void onRiveFileInitialized(Artboard artboard, BuildContext context) {
     final stateMachineController = StateMachineController.fromArtboard(
       artboard,
       stateMachine ?? 'State Machine 1',
@@ -95,6 +99,21 @@ class BaseExpressionView extends StatelessWidget {
           onEvent.call(StateEvent(name: event.name));
         });
       });
+
+      if (responsive) {
+        final size = MediaQuery.of(context).size;
+
+        final widthInput = stateMachineController.inputs
+            .where((input) => input.name == 'width')
+            .first;
+
+        final heightInput = stateMachineController.inputs
+            .where((input) => input.name == 'height')
+            .first;
+
+        widthInput.value = size.width;
+        heightInput.value = size.height;
+      }
 
       controller?.setInputs(stateMachineController.inputs);
 
