@@ -8,7 +8,7 @@
             "name": "Generate:Flutter",
             "request": "launch",
             "type": "dart",
-            "program": "bin/expression_cli.dart",
+            "program": "bin/expressionui.dart",
             "args": [
                 "generate",
                 "-p",
