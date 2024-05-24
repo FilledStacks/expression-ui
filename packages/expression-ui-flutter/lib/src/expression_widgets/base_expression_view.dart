@@ -60,13 +60,20 @@ class BaseExpressionView extends StatelessWidget {
     final riveView = RiveAnimation.asset(
       filePath,
       artboard: artboardName,
-      useArtboardSize: useArtboardSize || scrollable,
+      useArtboardSize: responsive || useArtboardSize || scrollable,
       fit: fit,
       onInit: (artboard) => onRiveFileInitialized(artboard, context),
     );
 
     if (!scrollable) {
-      return riveView;
+      return OverflowBox(
+        minWidth: 0.0,
+        minHeight: 0.0,
+        maxWidth: double.infinity,
+        maxHeight: double.infinity,
+        alignment: Alignment.center,
+        child: riveView,
+      );
     }
 
     final size = MediaQuery.of(context).size;
