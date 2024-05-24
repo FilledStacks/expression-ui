@@ -1,3 +1,7 @@
+## 0.3.0
+
+- feat: Adds automatic responsive sizing to `BaseExpressionView` using the bone setup in the artboards
+
 ## 0.2.0
 
 -feat: Adds `StateController` that allows you to trigger inputs from your Flutter app
