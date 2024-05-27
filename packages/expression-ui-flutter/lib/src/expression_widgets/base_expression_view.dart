@@ -66,14 +66,16 @@ class BaseExpressionView extends StatelessWidget {
     );
 
     if (!scrollable) {
-      return OverflowBox(
-        minWidth: 0.0,
-        minHeight: 0.0,
-        maxWidth: double.infinity,
-        maxHeight: double.infinity,
-        alignment: Alignment.center,
-        child: riveView,
-      );
+      return responsive
+          ? OverflowBox(
+              minWidth: 0.0,
+              minHeight: 0.0,
+              maxWidth: double.infinity,
+              maxHeight: double.infinity,
+              alignment: Alignment.center,
+              child: riveView,
+            )
+          : riveView;
     }
 
     final size = MediaQuery.of(context).size;
