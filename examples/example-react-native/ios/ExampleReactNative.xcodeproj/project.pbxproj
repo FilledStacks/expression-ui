@@ -15,6 +15,7 @@
 		7699B88040F8A987B510C191 /* libPods-ExampleReactNative-ExampleReactNativeTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6CBCC0A4E27FBF8BF4A61 /* libPods-ExampleReactNative-ExampleReactNativeTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 		89BA4A696B2743C09D86F34E /* counter.riv in Resources */ = {isa = PBXBuildFile; fileRef = A308EA2B6BC7477E81DF25C0 /* counter.riv */; };
+		7D3D7B5BBB3D4FC3BB50EBEE /* expressionui.riv in Resources */ = {isa = PBXBuildFile; fileRef = 50F771C16362441F8570CA26 /* expressionui.riv */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +47,7 @@
 		89C6BE57DB24E9ADA2F236DE /* Pods-ExampleReactNative-ExampleReactNativeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ExampleReactNative-ExampleReactNativeTests.release.xcconfig"; path = "Target Support Files/Pods-ExampleReactNative-ExampleReactNativeTests/Pods-ExampleReactNative-ExampleReactNativeTests.release.xcconfig"; sourceTree = "<group>"; };
 		A308EA2B6BC7477E81DF25C0 /* counter.riv */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = counter.riv; path = ../assets/counter.riv; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
+		50F771C16362441F8570CA26 /* expressionui.riv */ = {isa = PBXFileReference; name = "expressionui.riv"; path = "../assets/expressionui.riv"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,6 +157,7 @@
 			isa = PBXGroup;
 			children = (
 				A308EA2B6BC7477E81DF25C0 /* counter.riv */,
+				50F771C16362441F8570CA26 /* expressionui.riv */,
 			);
 			name = Resources;
 			path = "";
@@ -256,6 +259,7 @@
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				89BA4A696B2743C09D86F34E /* counter.riv in Resources */,
+				7D3D7B5BBB3D4FC3BB50EBEE /* expressionui.riv in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
