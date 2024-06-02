@@ -5,7 +5,7 @@ import Rive from 'rive-react-native';
 import {StackParamList} from '../../App';
 import {
   CROSS_FRAMEWORK_VIEW,
-  EXPRESSION_UI_FILE_PATH,
+  EXPRESSION_UI_RIVE_RESOURCE,
 } from '../../constants/expression_constants';
 
 type Props = NativeStackScreenProps<StackParamList, 'CrossFramework'>;
@@ -15,7 +15,7 @@ export default function CrossFrameworkScreen({
 }: Props): React.JSX.Element {
   return (
     <Rive
-      resourceName={EXPRESSION_UI_FILE_PATH}
+      resourceName={EXPRESSION_UI_RIVE_RESOURCE}
       artboardName={CROSS_FRAMEWORK_VIEW}
       onRiveEventReceived={_ => navigation.push('DeveloperFriendly')}
     />

@@ -5,7 +5,7 @@ import Rive from 'rive-react-native';
 import {StackParamList} from '../../App';
 import {
   DEVELOPER_FRIENDLY_VIEW,
-  EXPRESSION_UI_FILE_PATH,
+  EXPRESSION_UI_RIVE_RESOURCE,
 } from '../../constants/expression_constants';
 
 type Props = NativeStackScreenProps<StackParamList, 'DeveloperFriendly'>;
@@ -15,7 +15,7 @@ export default function DeveloperFriendlyScreen({
 }: Props): React.JSX.Element {
   return (
     <Rive
-      resourceName={EXPRESSION_UI_FILE_PATH}
+      resourceName={EXPRESSION_UI_RIVE_RESOURCE}
       artboardName={DEVELOPER_FRIENDLY_VIEW}
       onRiveEventReceived={_ => navigation.push('PixelPerfection')}
     />

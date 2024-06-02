@@ -1,4 +1,4 @@
-export const EXPRESSION_UI_FILE_PATH = 'expressionui';
+export const EXPRESSION_UI_RIVE_RESOURCE = 'expressionui';
 
 export const INTRO_VIEW = 'intro-view';
 export const CROSS_FRAMEWORK_VIEW = 'cross-framework-view';

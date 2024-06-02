@@ -4,7 +4,7 @@ import Rive from 'rive-react-native';
 
 import {StackParamList} from '../../App';
 import {
-  EXPRESSION_UI_FILE_PATH,
+  EXPRESSION_UI_RIVE_RESOURCE,
   PIXEL_PERFECTION_VIEW,
 } from '../../constants/expression_constants';
 
@@ -15,7 +15,7 @@ export default function PixelPerfectionScreen({
 }: Props): React.JSX.Element {
   return (
     <Rive
-      resourceName={EXPRESSION_UI_FILE_PATH}
+      resourceName={EXPRESSION_UI_RIVE_RESOURCE}
       artboardName={PIXEL_PERFECTION_VIEW}
       onRiveEventReceived={_ => navigation.push('Composable')}
     />
