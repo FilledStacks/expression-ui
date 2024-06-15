@@ -112,16 +112,21 @@ class BaseExpressionView extends StatelessWidget {
       if (responsive) {
         final size = MediaQuery.of(context).size;
 
-        final widthInput = stateMachineController.inputs
-            .where((input) => input.name == 'width')
-            .first;
+        if (stateMachineController.inputs.length > 0) {
+          final widths = stateMachineController.inputs
+              .where((input) => input.name == 'width');
+          final heights = stateMachineController.inputs
+              .where((input) => input.name == 'height');
 
-        final heightInput = stateMachineController.inputs
-            .where((input) => input.name == 'height')
-            .first;
-
-        widthInput.value = size.width;
-        heightInput.value = size.height;
+          if (widths.length > 0) {
+            final widthInput = widths.first;
+            widthInput.value = size.width;
+          }
+          if (heights.length > 0) {
+            final heightInput = heights.first;
+            heightInput.value = size.height;
+          }
+        }
       }
 
       controller?.setInputs(stateMachineController.inputs);
