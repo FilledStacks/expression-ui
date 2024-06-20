@@ -112,6 +112,8 @@ class BaseExpressionView extends StatelessWidget {
       if (responsive) {
         final size = MediaQuery.of(context).size;
 
+        print('EXPRESSION_UI - Set responsive size $size');
+
         final widthInput = stateMachineController.inputs
             .where((input) => input.name == 'width')
             .first;
