@@ -14,7 +14,7 @@ class BaseExpressionView extends StatelessWidget {
 
   /// Fired when an event pointer down happens in the rive file
   ///
-  /// Events has the be triggered in the rive file
+  /// Events have to be triggered in the rive file
   final Function(StateEvent) onEvent;
 
   /// Set to true if the entire view needs to be scrollable
@@ -32,6 +32,7 @@ class BaseExpressionView extends StatelessWidget {
   /// Controller to manage the state of [artboardName]
   final StateController? controller;
 
+  /// Fit for the animation in the widget.
   final BoxFit fit;
 
   /// Internally sizes the wdget to match the artboard dimensions defined
