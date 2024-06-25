@@ -6,6 +6,8 @@
 import 'dart:async' as _i5;
 import 'dart:ui' as _i6;
 
+import 'package:expression_ui_example/services/firestore_onboarding_api_service.dart'
+    as _i7;
 import 'package:flutter/material.dart' as _i4;
 import 'package:mockito/mockito.dart' as _i1;
 import 'package:mockito/src/dummies.dart' as _i3;
@@ -670,3 +672,9 @@ class MockDialogService extends _i1.Mock implements _i2.DialogService {
         returnValueForMissingStub: null,
       );
 }
+
+/// A class which mocks [FirestoreOnboardingApiService].
+///
+/// See the documentation for Mockito's code generation for more information.
+class MockFirestoreOnboardingApiService extends _i1.Mock
+    implements _i7.FirestoreOnboardingApiService {}

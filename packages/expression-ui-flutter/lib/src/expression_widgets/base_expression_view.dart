@@ -14,7 +14,7 @@ class BaseExpressionView extends StatelessWidget {
 
   /// Fired when an event pointer down happens in the rive file
   ///
-  /// Events has the be triggered in the rive file
+  /// Events have to be triggered in the rive file
   final Function(StateEvent) onEvent;
 
   /// Set to true if the entire view needs to be scrollable
@@ -32,14 +32,12 @@ class BaseExpressionView extends StatelessWidget {
   /// Controller to manage the state of [artboardName]
   final StateController? controller;
 
+  /// Fit for the animation in the widget.
   final BoxFit fit;
 
   /// Internally sizes the wdget to match the artboard dimensions defined
   /// on the canvas
   final bool useArtboardSize;
-
-  /// Automatically adjusts the responsive bounds based on the current device size
-  final bool responsive;
 
   const BaseExpressionView({
     super.key,
@@ -52,7 +50,6 @@ class BaseExpressionView extends StatelessWidget {
     this.textValues = const {},
     this.controller,
     this.fit = BoxFit.cover,
-    this.responsive = true,
   });
 
   @override
@@ -60,22 +57,20 @@ class BaseExpressionView extends StatelessWidget {
     final riveView = RiveAnimation.asset(
       filePath,
       artboard: artboardName,
-      useArtboardSize: responsive || useArtboardSize || scrollable,
+      useArtboardSize: useArtboardSize || scrollable,
       fit: fit,
       onInit: (artboard) => onRiveFileInitialized(artboard, context),
     );
 
     if (!scrollable) {
-      return responsive
-          ? OverflowBox(
-              minWidth: 0.0,
-              minHeight: 0.0,
-              maxWidth: double.infinity,
-              maxHeight: double.infinity,
-              alignment: Alignment.center,
-              child: riveView,
-            )
-          : riveView;
+      return OverflowBox(
+        minWidth: 0.0,
+        minHeight: 0.0,
+        maxWidth: double.infinity,
+        maxHeight: double.infinity,
+        alignment: Alignment.center,
+        child: riveView,
+      );
     }
 
     final size = MediaQuery.of(context).size;
@@ -108,21 +103,6 @@ class BaseExpressionView extends StatelessWidget {
           onEvent.call(StateEvent(name: event.name));
         });
       });
-
-      if (responsive) {
-        final size = MediaQuery.of(context).size;
-
-        final widthInput = stateMachineController.inputs
-            .where((input) => input.name == 'width')
-            .first;
-
-        final heightInput = stateMachineController.inputs
-            .where((input) => input.name == 'height')
-            .first;
-
-        widthInput.value = size.width;
-        heightInput.value = size.height;
-      }
 
       controller?.setInputs(stateMachineController.inputs);
 

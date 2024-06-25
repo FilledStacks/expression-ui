@@ -8,19 +8,25 @@ class ExpressionView extends StatelessWidget {
 
   /// Fired when an event pointer down happens in the rive file
   ///
-  /// Events has the be triggered in the rive file
+  /// Events have to be triggered in the rive file
   final Function(StateEvent) onEvent;
 
   /// Set to true if the entire view needs to be scrollable
   ///
   /// defaults to false
   final bool scrollable;
+
+  /// Internally sizes the wdget to match the artboard dimensions defined
+  /// on the canvas.
   final bool useArtboardSize;
 
+  /// The map of dynamic text updates to perform
   final Map<String, String> textValues;
 
+  /// Controller to manage the state of [artboardName]
   final StateController? controller;
 
+  /// Fit for the animation in the widget
   final BoxFit fit;
 
   const ExpressionView({
