@@ -1,5 +1,6 @@
 import React from 'react';
 import {Fit} from 'rive-react-native';
+import {ViewStyle} from 'react-native';
 
 import StateEvent from '../expression-ui/state-event';
 import BaseExpressionView from '../expression-ui/BaseExpressionView';
@@ -11,6 +12,7 @@ interface ExpressionViewProps {
   scrollable?: boolean;
   stateMachineName?: string;
   fit?: Fit;
+  style?: ViewStyle;
 }
 
 const ExpressionView: React.FC<ExpressionViewProps> = ({
@@ -19,6 +21,7 @@ const ExpressionView: React.FC<ExpressionViewProps> = ({
   scrollable,
   stateMachineName,
   fit,
+  style,
 }) => {
   return (
     <BaseExpressionView
@@ -28,6 +31,7 @@ const ExpressionView: React.FC<ExpressionViewProps> = ({
       scrollable={scrollable}
       stateMachineName={stateMachineName}
       fit={fit}
+      style={style}
     />
   );
 };
