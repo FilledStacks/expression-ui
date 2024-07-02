@@ -39,7 +39,7 @@ class GenerateCommand extends Command {
 
     await templateService.generateCode(
       framework: framework,
-      views: riveFile.getViews(filePath: filePath),
+      templateItems: riveFile.getTemplateItems(filePath: filePath),
     );
   }
 }

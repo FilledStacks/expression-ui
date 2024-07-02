@@ -3,6 +3,7 @@ import 'package:expression_ui/src/extensions/rive_extensions.dart';
 import 'package:expression_ui/src/models/state_event.dart';
 import 'package:expression_ui/src/utils/state_controller.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:rive/rive.dart';
 
 /// Used for full views that make use of the responsive functionality that
@@ -57,27 +58,11 @@ class BaseResponsiveExpressionView extends StatelessWidget {
       }
     }
 
-    for (var input in _stateMachineController.inputs) {
-      print('🍼🍼🍼🍼🍼🍼 Input ${input.name}(${input.id}) = ${input.value}');
-    }
-
-    // _stateMachineController.addEventListener((event) {
-    //   print('🍼🍼🍼🍼🍼🍼 Event ${event.name} fired');
-    //   // SchedulerBinding.instance.addPostFrameCallback((_) {
-    //   //   onEvent.call(StateEvent(name: event.name));
-    //   // });
-    // });
-
     _stateMachineController.addEventListener((event) {
-      print('💥💥💥💥💥 Normal Event${event.name}');
+      SchedulerBinding.instance.addPostFrameCallback((_) {
+        onEvent.call(StateEvent(name: event.name));
+      });
     });
-
-    _stateMachineController.addRuntimeEventListener((event) {
-      print('💥💥💥💥💥 Runtime ${event.name}');
-    });
-
-    print(
-        '💥💥 Events 💥💥 Artboard events: ${_stateMachineController.reportedEvents}');
 
     controller?.setInputs(_stateMachineController.inputs);
   }
@@ -91,9 +76,7 @@ class BaseResponsiveExpressionView extends StatelessWidget {
       maxHeight: double.infinity,
       alignment: Alignment.center,
       child: Rive(
-        artboard: ExpressionManager.instance
-            .getArtboardForView(artboardName)
-            .instance(),
+        artboard: ExpressionManager.instance.getArtboardForView(artboardName),
         useArtboardSize: true,
         fit: BoxFit.cover,
         enablePointerEvents: true,

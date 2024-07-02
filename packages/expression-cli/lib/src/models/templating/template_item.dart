@@ -1,21 +1,25 @@
+import 'package:expression_cli/src/enums/template_item_type.dart';
 import 'package:expression_cli/src/models/templating/template_event.dart';
 import 'package:expression_cli/src/models/templating/template_textrun.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:recase/recase.dart';
 
-part 'template_view.freezed.dart';
-part 'template_view.g.dart';
+part 'template_item.freezed.dart';
+part 'template_item.g.dart';
 
 @freezed
-class TemplateView with _$TemplateView {
-  TemplateView._();
+class TemplateItem with _$TemplateItem {
+  TemplateItem._();
 
-  factory TemplateView({
+  factory TemplateItem({
     /// The name of the artboard as defined in the .riv file
     required String artboardName,
 
     /// The path to the file that contains this artboard
     required String filePath,
+
+    /// Either view or component
+    required TemplateItemType type,
 
     /// Events present in the state machine for this arboard
     @Default([]) List<TemplateEvent> events,
@@ -23,17 +27,17 @@ class TemplateView with _$TemplateView {
     /// TextRuns are all the text values that can dynamically be replaced in
     /// the current [artboardName]
     @Default([]) List<TemplateTextRun> textRuns,
-  }) = _TemplateView;
+  }) = _TemplateItem;
 
-  factory TemplateView.fromJson(Map<String, dynamic> json) =>
-      _$TemplateViewFromJson(json);
+  factory TemplateItem.fromJson(Map<String, dynamic> json) =>
+      _$TemplateItemFromJson(json);
 
-  String get viewName {
+  String get itemName {
     final nameWithoutView = artboardName.replaceAll('-view', '');
     return ReCase(nameWithoutView).pascalCase;
   }
 
-  String get viewFileName {
+  String get itemFileName {
     return ReCase(artboardName).snakeCase;
   }
 
@@ -45,7 +49,8 @@ class TemplateView with _$TemplateView {
       ...textRuns.map((textRun) => textRun.toTemplateData())
     ];
 
-    jsonMap['viewName'] = viewName;
+    jsonMap[type.itemTemplateNameKey] = itemName;
+
     return jsonMap;
   }
 }

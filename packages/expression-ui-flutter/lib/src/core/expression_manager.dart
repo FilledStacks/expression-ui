@@ -31,27 +31,18 @@ class ExpressionManager {
     _riveFile = RiveFile.import(riveAnimationData);
 
     for (var artboard in _riveFile.artboards) {
-      final artboardName = artboard.name;
+      final artboardInstance = artboard.instance();
+      final artboardName = artboardInstance.name;
 
       if (artboardName.contains('-view')) {
         final stateMachineController = StateMachineController.fromArtboard(
-          artboard,
+          artboardInstance,
           'State Machine 1',
         );
 
         if (stateMachineController != null) {
-          stateMachineController.addEventListener((event) {
-            print('💥💥💥💥💥 Normal Event${event.name}');
-          });
-
-          print('💪💪💪💪💪 Artboard Events: ${artboard.events}');
-
-          stateMachineController.reportedEvents.addAll(artboard.events);
-
-          print('💪💪💪💪💪 Reported Events: ${artboard.events}');
-
-          artboard.addController(stateMachineController);
-          artboard.advance(1, nested: true);
+          artboardInstance.addController(stateMachineController);
+          artboardInstance.advance(1, nested: true);
 
           bool hasResponsiveHeight = false, hasResponsiveWidth = false;
 
@@ -66,13 +57,13 @@ class ExpressionManager {
             }
           }
 
-          artboard.advance(1, nested: true);
+          artboardInstance.advance(1, nested: true);
 
           if (hasResponsiveWidth || hasResponsiveHeight) {
             print(
                 'Caching state machine controller and artboard for $artboardName');
             _cachedResponsiveViews[artboardName] =
-                (artboard, stateMachineController);
+                (artboardInstance, stateMachineController);
           }
         }
       }
