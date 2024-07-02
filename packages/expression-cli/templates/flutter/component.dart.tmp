@@ -1,7 +1,7 @@
 import 'package:expression_ui/expression_ui.dart';
 import 'package:flutter/material.dart';
 
-class {{viewName}}ExpressionView extends StatelessWidget {
+class {{componentName}}ExpressionComponent extends StatelessWidget {
   {{#events}}
   final Function()? {{eventFunctionName}};
   {{/events}}
@@ -11,7 +11,7 @@ class {{viewName}}ExpressionView extends StatelessWidget {
 
   final StateController? controller;
 
-  const {{viewName}}ExpressionView({
+  const {{componentName}}ExpressionComponent({
     super.key,
     {{#events}}
     this.{{eventFunctionName}},
@@ -24,11 +24,13 @@ class {{viewName}}ExpressionView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BaseResponsiveExpressionView(
+    return BaseExpressionView(
+      filePath: '{{{filePath}}}',
       artboardName: '{{artboardName}}',
       onEvent: onEventHandler,
       textValues: getTextValues(),
       controller: controller,
+      useArtboardSize: true,
     );
   }
 
