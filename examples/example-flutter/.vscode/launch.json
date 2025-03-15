@@ -5,21 +5,9 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "rive_counter",
+            "name": "Example",
             "request": "launch",
             "type": "dart"
-        },
-        {
-            "name": "rive_counter (profile mode)",
-            "request": "launch",
-            "type": "dart",
-            "flutterMode": "profile"
-        },
-        {
-            "name": "rive_counter (release mode)",
-            "request": "launch",
-            "type": "dart",
-            "flutterMode": "release"
         }
     ]
 }

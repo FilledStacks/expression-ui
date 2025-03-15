@@ -1,5 +1,5 @@
-import 'package:expression_ui_example/constants/expression_constants.dart';
-import 'package:expression_ui_example/expression_ui/expression_view.dart';
+
+import 'package:expression_ui_example/expressionui/views/intro_view.dart';
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
 
@@ -15,9 +15,9 @@ class StartupView extends StackedView<StartupViewModel> {
     Widget? child,
   ) {
     return Scaffold(
-      body: ExpressionView(
-        artboardName: ksIntroView,
-        onEvent: (_) => viewModel.navigateToNextView(),
+      
+      body: IntroExpressionView(
+        onBeginExperience: viewModel.navigateToNextView,
       ),
     );
   }

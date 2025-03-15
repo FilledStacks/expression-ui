@@ -1,5 +1,3 @@
-import 'package:expression_ui_example/expression_ui/expression_view.dart';
-
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
 
@@ -15,13 +13,13 @@ class ThemeView extends StackedView<ThemeViewModel> {
     Widget? child,
   ) {
     return Scaffold(
-      body: ExpressionView(
-        artboardName:
-            MediaQuery.of(context).platformBrightness == Brightness.light
-                ? 'home-light'
-                : 'home-dark',
-        onEvent: (_) {},
-      ),
+      // body: ExpressionView(
+      //   artboardName:
+      //       MediaQuery.of(context).platformBrightness == Brightness.light
+      //           ? 'home-light'
+      //           : 'home-dark',
+      //   onEvent: (_) {},
+      // ),
     );
   }
 

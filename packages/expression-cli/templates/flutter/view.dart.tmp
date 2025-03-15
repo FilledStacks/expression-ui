@@ -24,7 +24,8 @@ class {{viewName}}ExpressionView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BaseResponsiveExpressionView(
+    return BaseExpressionView(
+      filePath: '{{{filePath}}}',
       artboardName: '{{artboardName}}',
       onEvent: onEventHandler,
       textValues: getTextValues(),

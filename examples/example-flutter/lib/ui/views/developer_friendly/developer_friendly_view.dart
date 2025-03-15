@@ -1,5 +1,4 @@
-import 'package:expression_ui_example/constants/expression_constants.dart';
-import 'package:expression_ui_example/expression_ui/expression_view.dart';
+import 'package:expression_ui_example/expressionui/views/developer_friendly_view.dart';
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
 
@@ -15,10 +14,9 @@ class DeveloperFriendlyView extends StackedView<DeveloperFriendlyViewModel> {
     Widget? child,
   ) {
     return Scaffold(
-      body: ExpressionView(
-        artboardName: ksDeveloperFriendlyView,
-        onEvent: (_) => viewModel.navigateToNextView(),
-      ),
+      body: DeveloperFriendlyExpressionView(
+        onNextTapped: viewModel.navigateToNextView,
+      )
     );
   }
 

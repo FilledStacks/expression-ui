@@ -17,12 +17,6 @@ class BaseExpressionView extends StatelessWidget {
   /// Events have to be triggered in the rive file
   final Function(StateEvent) onEvent;
 
-  /// Set to true if the entire view needs to be scrollable
-  ///
-  /// defaults to false
-  /// Alias for [useArtboardSize]
-  final bool scrollable;
-
   /// The name of the state machine to load
   final String? stateMachine;
 
@@ -33,7 +27,7 @@ class BaseExpressionView extends StatelessWidget {
   final StateController? controller;
 
   /// Fit for the animation in the widget.
-  final BoxFit fit;
+  final BoxFit? fit;
 
   /// Internally sizes the wdget to match the artboard dimensions defined
   /// on the canvas
@@ -45,11 +39,10 @@ class BaseExpressionView extends StatelessWidget {
     required this.artboardName,
     required this.onEvent,
     this.useArtboardSize = false,
-    this.scrollable = false,
     this.stateMachine,
     this.textValues = const {},
     this.controller,
-    this.fit = BoxFit.cover,
+    this.fit,
   });
 
   @override
@@ -57,23 +50,12 @@ class BaseExpressionView extends StatelessWidget {
     final riveView = RiveAnimation.asset(
       filePath,
       artboard: artboardName,
-      useArtboardSize: useArtboardSize || scrollable,
+      useArtboardSize: useArtboardSize,
       fit: fit,
       onInit: (artboard) => onRiveFileInitialized(artboard, context),
     );
 
-    if (!scrollable) {
-      return riveView;
-    }
-
-    final size = MediaQuery.of(context).size;
-    return SizedBox(
-      height: size.height,
-      width: size.width,
-      child: SingleChildScrollView(
-        child: riveView,
-      ),
-    );
+    return riveView;
   }
 
   void onRiveFileInitialized(Artboard artboard, BuildContext context) {

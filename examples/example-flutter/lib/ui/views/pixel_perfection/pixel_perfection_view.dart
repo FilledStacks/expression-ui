@@ -1,5 +1,4 @@
-import 'package:expression_ui_example/constants/expression_constants.dart';
-import 'package:expression_ui_example/expression_ui/expression_view.dart';
+import 'package:expression_ui_example/expressionui/views/pixel_perfection_view.dart';
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
 
@@ -15,10 +14,9 @@ class PixelPerfectionView extends StackedView<PixelPerfectionViewModel> {
     Widget? child,
   ) {
     return Scaffold(
-      body: ExpressionView(
-        artboardName: ksPixelPerfectionView,
-        onEvent: (_) => viewModel.navigateToNextView(),
-      ),
+      body: PixelPerfectionExpressionView(
+        onNextTapped: viewModel.navigateToNextView,
+      )
     );
   }
 
