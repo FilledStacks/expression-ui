@@ -7,7 +7,4 @@ class ExpressionManager {
     _instance ??= ExpressionManager();
     return _instance!;
   }
-  late RiveFile _riveFile;
-  RiveFile get riveFile => _riveFile;
-  
 }

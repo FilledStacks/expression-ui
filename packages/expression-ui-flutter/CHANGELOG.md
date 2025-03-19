@@ -1,3 +1,7 @@
+## 0.4.0
+
+- feat: Removes all Responsive Sizing in favor of using Rive's built in responsive sizing through layouts and artboard resizing
+
 ## 0.3.0
 
 - feat: Adds automatic responsive sizing to `BaseExpressionView` using the bone setup in the artboards

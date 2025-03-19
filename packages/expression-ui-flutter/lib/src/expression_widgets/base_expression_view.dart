@@ -83,5 +83,12 @@ class BaseExpressionView extends StatelessWidget {
 
       artboard.addController(stateMachineController);
     }
+
+    final screenSize = MediaQuery.of(context).size;
+
+    artboard.width = screenSize.width;
+    artboard.height = screenSize.height;
+    print(
+        '📏 Set width and height to ${artboard.width} x ${artboard.height} 📏');
   }
 }
