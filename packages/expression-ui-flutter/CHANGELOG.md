@@ -1,6 +1,6 @@
 ## 0.4.0
 
-- feat: Removes all Responsive Sizing in favor of using Rive's built in responsive sizing through layouts and artboard resizing
+- feat: Removes all Responsive Sizing in favour of using Rive's built in responsive sizing through layouts and artboard resizing
 
 ## 0.3.0
 
