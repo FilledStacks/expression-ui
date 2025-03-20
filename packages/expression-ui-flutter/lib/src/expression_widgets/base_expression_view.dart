@@ -88,7 +88,5 @@ class BaseExpressionView extends StatelessWidget {
 
     artboard.width = screenSize.width;
     artboard.height = screenSize.height;
-    print(
-        '📏 Set width and height to ${artboard.width} x ${artboard.height} 📏');
   }
 }
