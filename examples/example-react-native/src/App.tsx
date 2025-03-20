@@ -1,8 +1,12 @@
 import React from 'react';
-import Intro from './Intro';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import Counter from './Counter';
+
+import StartupScreen from './screens/StartupScreen';
+import CrossFrameworkScreen from './screens/CrossFrameworkScreen';
+import DeveloperFriendlyScreen from './screens/DeveloperFriendlyScreen';
+import PixelPerfectionScreen from './screens/PixelPerfectionScreen';
+import ComposableScreen from './screens/ComposableScreen';
 
 import type {NativeStackNavigationOptions} from '@react-navigation/native-stack';
 
@@ -11,8 +15,11 @@ const options: NativeStackNavigationOptions = {
 };
 
 export type StackParamList = {
-  Intro: undefined;
-  Counter: undefined;
+  Startup: undefined;
+  CrossFramework: undefined;
+  DeveloperFriendly: undefined;
+  PixelPerfection: undefined;
+  Composable: undefined;
 };
 
 const Stack = createNativeStackNavigator<StackParamList>();
@@ -20,9 +27,18 @@ const Stack = createNativeStackNavigator<StackParamList>();
 export default function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Intro" screenOptions={options}>
-        <Stack.Screen name="Intro" component={Intro} />
-        <Stack.Screen name="Counter" component={Counter} />
+      <Stack.Navigator initialRouteName="Startup" screenOptions={options}>
+        <Stack.Screen name="Startup" component={StartupScreen} />
+        <Stack.Screen name="CrossFramework" component={CrossFrameworkScreen} />
+        <Stack.Screen
+          name="DeveloperFriendly"
+          component={DeveloperFriendlyScreen}
+        />
+        <Stack.Screen
+          name="PixelPerfection"
+          component={PixelPerfectionScreen}
+        />
+        <Stack.Screen name="Composable" component={ComposableScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );
